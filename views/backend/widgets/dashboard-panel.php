@@ -2,7 +2,7 @@
 /**
  * Custom dashboard panel output
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Widgets
  * @since      1.0.0
@@ -27,7 +27,7 @@ $avatar       = get_avatar(
 <div class="welcome-panel welcome-panel-custom">
 	<div class="dashboard-content-wrapper">
 		<div id="dashboard-get-started" class="welcome-panel-column">
-			<h3><?php _e( 'Get Started', 'sitecore' ); ?></h3>
+			<h3><?php _e( 'Get Started', 'ccdzine' ); ?></h3>
 			<div class="dashboard-panel-section-intro dashboard-panel-user-greeting">
 
 				<figure>
@@ -40,12 +40,12 @@ $avatar       = get_avatar(
 				<div>
 					<?php echo sprintf(
 						'<h4>%1s %2s.</h4>',
-						esc_html__( 'Howdy,', 'sitecore' ),
+						esc_html__( 'Howdy,', 'ccdzine' ),
 						$user_name
 					); ?>
-					<p><?php _e( 'This site may display your profile in posts that you author, and it offers user-defined color schemes.', 'sitecore' ); ?></p>
+					<p><?php _e( 'This site may display your profile in posts that you author, and it offers user-defined color schemes.', 'ccdzine' ); ?></p>
 					<p class="dashboard-panel-call-to-action"><a class="button button-primary button-hero" href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>"><?php _e( 'Manage Your Profile' ); ?></a></p>
-					<p class="description"><?php _e( 'Edit your display name & bio.', 'sitecore' ); ?></p>
+					<p class="description"><?php _e( 'Edit your display name & bio.', 'ccdzine' ); ?></p>
 				</div>
 
 			</div>

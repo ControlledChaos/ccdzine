@@ -2,13 +2,13 @@
 /**
  * Add a widget type
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Widgets
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Widgets;
+namespace CCDzine\Classes\Widgets;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -164,7 +164,7 @@ class Add_Widget extends \WP_Widget {
 		// Sample action adds an HTML comment to the head element.
 		add_action( 'wp_head', function() {
 			printf(
-				"\n" . __( '<!-- At least on instance of the %s widget is active. -->', 'sitecore' ) . "\n",
+				"\n" . __( '<!-- At least on instance of the %s widget is active. -->', 'ccdzine' ) . "\n",
 				$this->type_name()
 			);
 		}, 99 );
@@ -215,11 +215,11 @@ class Add_Widget extends \WP_Widget {
 	protected function type_name() {
 
 		if ( is_string( $this->type_name ) && ! empty( $this->type_name ) ) {
-			$name = __( ucwords( $this->type_name ), 'sitecore' );
+			$name = __( ucwords( $this->type_name ), 'ccdzine' );
 
 		} else {
 			$base = str_replace( [ '-', '_' ], ' ', $this->type_base );
-			$name = __( ucwords( $base ), 'sitecore' );
+			$name = __( ucwords( $base ), 'ccdzine' );
 		}
 
 		return apply_filters( $this->prefix() . 'widget_type_name', $name );
@@ -235,7 +235,7 @@ class Add_Widget extends \WP_Widget {
 	protected function type_desc() {
 
 		if ( is_string( $this->type_desc ) && ! empty( $this->type_desc ) ) {
-			$type_desc = __( $this->type_desc, 'sitecore' );
+			$type_desc = __( $this->type_desc, 'ccdzine' );
 		} else {
 			$type_desc = '';
 		}
@@ -254,7 +254,7 @@ class Add_Widget extends \WP_Widget {
 	protected function title_fallback() {
 
 		if ( is_string( $this->title_fallback ) && ! empty( $this->title_fallback ) ) {
-			$title_fallback = __( ucwords( $this->title_fallback ), 'sitecore' );
+			$title_fallback = __( ucwords( $this->title_fallback ), 'ccdzine' );
 		} else {
 			$title_fallback = $this->type_name();
 		}
@@ -563,7 +563,7 @@ class Add_Widget extends \WP_Widget {
 	public function form( $instance ) {
 
 		// Look for the file.
-		$file = SCP_PATH . $this->widget_views() . $this->form_file();
+		$file = CCD_PATH . $this->widget_views() . $this->form_file();
 
 		// Include the file if it exists.
 		if ( file_exists( $file ) ) {
@@ -588,7 +588,7 @@ class Add_Widget extends \WP_Widget {
 	public function widget( $args, $instance ) {
 
 		// Look for the file.
-		$file = SCP_PATH . $this->widget_views() . $this->widget_file();
+		$file = CCD_PATH . $this->widget_views() . $this->widget_file();
 
 		// Include the file if it exists.
 		if ( file_exists( $file ) ) {

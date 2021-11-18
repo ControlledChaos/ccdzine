@@ -2,7 +2,7 @@
 /**
  * Customize dashboard tab
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Widgets
  * @since      1.0.0
@@ -10,7 +10,7 @@
 
 // Get icon URL or fallback.
 $theme_icon = get_theme_file_uri( '/assets/images/theme-icon.jpg' );
-$brush_icon = SCP_URL . 'assets/images/brush-icon.svg';
+$brush_icon = CCD_URL . 'assets/images/brush-icon.svg';
 $get_logo   = get_theme_mod( 'custom_logo' );
 $logo_url   = wp_get_attachment_image_src( $get_logo, 'full' );
 
@@ -40,7 +40,7 @@ $get_theme_tags    = $get_theme->get( 'Tags' );
 $screenshot_src    = $get_theme->get_screenshot();
 
 // Text if data is not provided by the theme.
-$not_provided = __( 'Not provided in the stylesheet header', 'sitecore' );
+$not_provided = __( 'Not provided in the stylesheet header', 'ccdzine' );
 
 // Theme description.
 if ( $get_theme_desc ) {
@@ -87,22 +87,22 @@ if ( $get_theme_domain ) {
 ?>
 <div id="customize" class="dashboard-panel-content dashboard-customize-content" style="display: none">
 
-	<h2><?php _e( 'Customize Your Site', 'sitecore' ); ?></h2>
-	<p class="description"><?php _e( 'Choose layout options, color schemes, and more.', 'sitecore' ); ?></p>
+	<h2><?php _e( 'Customize Your Site', 'ccdzine' ); ?></h2>
+	<p class="description"><?php _e( 'Choose layout options, color schemes, and more.', 'ccdzine' ); ?></p>
 
 	<div class="dashboard-panel-column-container">
 
 		<div class="dashboard-panel-column">
 
-			<h3><?php _e( 'Active Theme', 'sitecore' ); ?> </h3>
+			<h3><?php _e( 'Active Theme', 'ccdzine' ); ?> </h3>
 
 			<div class="dashboard-panel-section-intro dashboard-panel-theme-greeting">
 
 				<figure>
 					<a href="<?php echo esc_url( wp_customize_url() ); ?>">
-						<img class="avatar" src="<?php echo esc_attr( $icon_url ); ?>" alt="<?php _e( 'Site icon', 'sitecore' ); ?>" width="64" height="64" />
+						<img class="avatar" src="<?php echo esc_attr( $icon_url ); ?>" alt="<?php _e( 'Site icon', 'ccdzine' ); ?>" width="64" height="64" />
 					</a>
-					<figcaption class="screen-reader-text"><?php echo $get_theme_name; ?> <?php _e( 'theme', 'sitecore' ); ?></figcaption>
+					<figcaption class="screen-reader-text"><?php echo $get_theme_name; ?> <?php _e( 'theme', 'ccdzine' ); ?></figcaption>
 				</figure>
 
 				<div>
@@ -112,13 +112,13 @@ if ( $get_theme_domain ) {
 					<?php if ( $get_theme_tags ) {
 						printf(
 							'<p><strong>%s</strong> %s</p>',
-							__( 'Tagged:', 'sitecore' ),
+							__( 'Tagged:', 'ccdzine' ),
 							implode( ', ', $get_theme_tags )
 						);
 					} ?>
 
 					<p class="dashboard-panel-call-to-action"><a class="button button-primary button-hero load-customize hide-if-no-customize" href="<?php echo esc_url( wp_customize_url() . '?url=' . site_url() . '&return=' . site_url() ); ?>"><?php _e( 'Website Customizer' ); ?></a></p>
-					<p class="description"><?php _e( 'Manage site identity & theme options.', 'sitecore' ); ?></p>
+					<p class="description"><?php _e( 'Manage site identity & theme options.', 'ccdzine' ); ?></p>
 				</div>
 
 			</div>
@@ -126,35 +126,35 @@ if ( $get_theme_domain ) {
 
 		<div class="dashboard-panel-column">
 
-			<h3><?php _e( 'Theme Details', 'sitecore' ); ?></h3>
+			<h3><?php _e( 'Theme Details', 'ccdzine' ); ?></h3>
 
 			<ul>
 				<?php if ( $get_template ) : ?>
-				<li><strong><?php _e( 'Template: ', 'sitecore' ); ?></strong><?php echo $parent_name; ?></li>
+				<li><strong><?php _e( 'Template: ', 'ccdzine' ); ?></strong><?php echo $parent_name; ?></li>
 				<?php endif; ?>
-				<li><strong><?php esc_html_e( 'Version: ', 'sitecore' ); ?></strong><?php echo $version; ?></li>
+				<li><strong><?php esc_html_e( 'Version: ', 'ccdzine' ); ?></strong><?php echo $version; ?></li>
 				<?php if ( $get_theme_min_wp ) : ?>
-				<li><strong><?php _e( 'System Minimum: ', 'sitecore' ); ?></strong><?php echo $get_theme_min_wp; ?></li>
+				<li><strong><?php _e( 'System Minimum: ', 'ccdzine' ); ?></strong><?php echo $get_theme_min_wp; ?></li>
 				<?php endif; ?>
 				<?php if ( $get_theme_min_php ) : ?>
-				<li><strong><?php _e( 'PHP Minimum: ', 'sitecore' ); ?></strong><?php echo $get_theme_min_php; ?></li>
+				<li><strong><?php _e( 'PHP Minimum: ', 'ccdzine' ); ?></strong><?php echo $get_theme_min_php; ?></li>
 				<?php endif; ?>
-				<li><strong><?php esc_html_e( 'Text Domain: ', 'sitecore' ); ?></strong><?php echo $domain; ?></li>
-				<li><strong><?php esc_html_e( 'Theme URI: ', 'sitecore' ); ?></strong><?php echo $theme_uri; ?></li>
-				<li><strong><?php esc_html_e( 'Author: ', 'sitecore' ); ?></strong><?php echo $author; ?></li>
-				<li><strong><?php esc_html_e( 'Author URI: ', 'sitecore' ); ?></strong><?php echo $author_uri; ?></li>
+				<li><strong><?php esc_html_e( 'Text Domain: ', 'ccdzine' ); ?></strong><?php echo $domain; ?></li>
+				<li><strong><?php esc_html_e( 'Theme URI: ', 'ccdzine' ); ?></strong><?php echo $theme_uri; ?></li>
+				<li><strong><?php esc_html_e( 'Author: ', 'ccdzine' ); ?></strong><?php echo $author; ?></li>
+				<li><strong><?php esc_html_e( 'Author URI: ', 'ccdzine' ); ?></strong><?php echo $author_uri; ?></li>
 			</ul>
 		</div>
 
 		<div class="dashboard-panel-column dashboard-panel-last">
 
-			<h3><?php _e( 'Appearance Options', 'sitecore' ); ?></h3>
+			<h3><?php _e( 'Appearance Options', 'ccdzine' ); ?></h3>
 
 			<ul>
-				<li><a class="dashboard-icon customize-icon-schemes" href="<?php echo esc_url( wp_customize_url() ); ?>"><?php _e( 'Choose color schemes', 'sitecore' ); ?></a></li>
-				<li><a class="dashboard-icon customize-icon-headers" href="<?php echo esc_url( wp_customize_url() ); ?>"><?php _e( 'Set site & page headers', 'sitecore' ); ?></a></li>
-				<li><a class="dashboard-icon customize-icon-typography" href="<?php echo esc_url( wp_customize_url() . '?url=' . site_url() . '&autofocus[section]=typography_options&return=' . site_url() ); ?>"><?php _e( 'Design your typography', 'sitecore' ); ?></a></li>
-				<li><a class="dashboard-icon customize-icon-background" href="<?php echo esc_url( wp_customize_url() . '?url=' . site_url() . '&autofocus[section]=background_image&return=' . site_url() ); ?>"><?php _e( 'Site background', 'sitecore' ); ?></a></li>
+				<li><a class="dashboard-icon customize-icon-schemes" href="<?php echo esc_url( wp_customize_url() ); ?>"><?php _e( 'Choose color schemes', 'ccdzine' ); ?></a></li>
+				<li><a class="dashboard-icon customize-icon-headers" href="<?php echo esc_url( wp_customize_url() ); ?>"><?php _e( 'Set site & page headers', 'ccdzine' ); ?></a></li>
+				<li><a class="dashboard-icon customize-icon-typography" href="<?php echo esc_url( wp_customize_url() . '?url=' . site_url() . '&autofocus[section]=typography_options&return=' . site_url() ); ?>"><?php _e( 'Design your typography', 'ccdzine' ); ?></a></li>
+				<li><a class="dashboard-icon customize-icon-background" href="<?php echo esc_url( wp_customize_url() . '?url=' . site_url() . '&autofocus[section]=background_image&return=' . site_url() ); ?>"><?php _e( 'Site background', 'ccdzine' ); ?></a></li>
 				<?php do_action( 'customize_dashboard_tab_appearance_options' ); ?>
 			</ul>
 		</div>

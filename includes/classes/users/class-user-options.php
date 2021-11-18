@@ -4,13 +4,13 @@
  *
  * Puts options values into user-friendly text.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Users;
+namespace CCDzine\Classes\Users;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,7 +49,7 @@ class User_Options {
 		if ( isset( $user_data->user_login ) ) {
 			$username = esc_html( $user_data->user_login );
 		} else {
-			$username = __( 'Not available', 'sitecore' );
+			$username = __( 'Not available', 'ccdzine' );
 		}
 
 		// Return the username.
@@ -72,7 +72,7 @@ class User_Options {
 
 		// Add Super Admin if applicable to current user.
 		if ( is_multisite() && is_super_admin( get_current_user_id() ) ) {
-			$super = [ __( 'Super Admin', 'sitecore' ) ];
+			$super = [ __( 'Super Admin', 'ccdzine' ) ];
 			$roles = array_merge( $super, $roles );
 		}
 
@@ -98,12 +98,12 @@ class User_Options {
 		// Translate and capitalize each role.
 		if ( is_array( $roles ) ) {
 			foreach( $roles as $role ) {
-				$role_i18n[] = ucwords( __( $role, 'sitecore' ) );
+				$role_i18n[] = ucwords( __( $role, 'ccdzine' ) );
 			}
 		} else {
 
 			// Default array.
-			$role_i18n = [ __( 'Undetermined', 'sitecore' ) ];
+			$role_i18n = [ __( 'Undetermined', 'ccdzine' ) ];
 		}
 
 		// Return a comma-separated list of user roles.
@@ -126,7 +126,7 @@ class User_Options {
 		if ( isset( $user_data->nickname ) ) {
 			$nickname = esc_html( $user_data->user_login );
 		} else {
-			$nickname = __( 'Not available', 'sitecore' );
+			$nickname = __( 'Not available', 'ccdzine' );
 		}
 
 		// Return the nickname.
@@ -149,7 +149,7 @@ class User_Options {
 		if ( isset( $user_data->display_name ) ) {
 			$display_name = esc_html( $user_data->display_name );
 		} else {
-			$display_name = __( 'Not available', 'sitecore' );
+			$display_name = __( 'Not available', 'ccdzine' );
 		}
 
 		// Return the display name.
@@ -178,7 +178,7 @@ class User_Options {
 				sanitize_email( $user_data->user_email )
 			);
 		} else {
-			$user_email = __( 'Not available', 'sitecore' );
+			$user_email = __( 'Not available', 'ccdzine' );
 		}
 
 		// Return the linked email address.
@@ -204,7 +204,7 @@ class User_Options {
 				esc_url( get_user_option( 'user_url' ) )
 			);
 		} else {
-			$website = __( 'No website provided.', 'sitecore' );
+			$website = __( 'No website provided.', 'ccdzine' );
 		}
 
 		// Return the linked website URL or notice.
@@ -223,9 +223,9 @@ class User_Options {
 
 		// Check the toolbar user option.
 		if ( 'true' == get_user_option( 'show_admin_bar_front' ) ) {
-			$enabled = __( 'Yes', 'sitecore' );
+			$enabled = __( 'Yes', 'ccdzine' );
 		} else {
-			$enabled = __( 'No', 'sitecore' );
+			$enabled = __( 'No', 'ccdzine' );
 		}
 
 		// Return the string.

@@ -2,13 +2,13 @@
 /**
  * Drag & drop custom post and taxonomy orders
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'WPINC' ) ) {
@@ -67,7 +67,7 @@ class Types_Taxes_Order {
 			$result = $wpdb->query( $query );
 		}
 
-		update_option( 'scp_order_install', 1 );
+		update_option( 'ccd_order_install', 1 );
 	}
 
 	/**
@@ -83,8 +83,8 @@ class Types_Taxes_Order {
 	public function admin_menu() {
 
 		add_options_page(
-			__( 'Posts & Taxonomies Sort Order', 'sitecore' ),
-			__( 'Sort Order', 'sitecore' ),
+			__( 'Posts & Taxonomies Sort Order', 'ccdzine' ),
+			__( 'Sort Order', 'ccdzine' ),
 			'manage_options',
 			'sort-order-settings',
 			[ $this, 'admin_page' ]
@@ -101,7 +101,7 @@ class Types_Taxes_Order {
 	 *         moved to the Reading Settings page.
 	 */
 	public function admin_page() {
-		require SCP_PATH . 'views/backend/forms/settings-page-posts-order.php';
+		require CCD_PATH . 'views/backend/forms/settings-page-posts-order.php';
 	}
 
 	/**
@@ -175,7 +175,7 @@ class Types_Taxes_Order {
 
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script( 'jquery-ui-sortable' );
-			wp_enqueue_script( 'post-tax-order', SCP_URL . 'assets/js/post-tax-order' . $suffix . '.js', [ 'jquery' ], null, true );
+			wp_enqueue_script( 'post-tax-order', CCD_URL . 'assets/js/post-tax-order' . $suffix . '.js', [ 'jquery' ], null, true );
 
 		}
 
@@ -374,17 +374,17 @@ class Types_Taxes_Order {
 
 		global $wpdb;
 
-		if ( ! isset( $_POST['scp_posts_order_submit'] ) ) {
+		if ( ! isset( $_POST['ccd_posts_order_submit'] ) ) {
 			return false;
 		}
 
-		check_admin_referer( 'scp_posts_order_nonce' );
+		check_admin_referer( 'ccd_posts_order_nonce' );
 
 		$input_options            = [];
 		$input_options['objects'] = isset( $_POST['objects'] ) ? $_POST['objects'] : '';
 		$input_options['tags']    = isset( $_POST['tags'] ) ? $_POST['tags'] : '';
 
-		update_option( 'scp_order_options', $input_options );
+		update_option( 'ccd_order_options', $input_options );
 
 		$objects = $this->get_order_options_objects();
 		$tags    = $this->get_order_options_tags();
@@ -745,14 +745,14 @@ class Types_Taxes_Order {
 	 */
 	public function get_order_options_objects() {
 
-		if ( $scp_order_options = get_option( 'scp_order_options' ) ) {
-			$scp_order_options = get_option( 'scp_order_options' );
+		if ( $ccd_order_options = get_option( 'ccd_order_options' ) ) {
+			$ccd_order_options = get_option( 'ccd_order_options' );
 		} else {
-			$scp_order_options = [];
+			$ccd_order_options = [];
 		}
 
-		if ( isset( $scp_order_options['objects'] ) && is_array( $scp_order_options['objects'] ) ) {
-			$objects = $scp_order_options['objects'];
+		if ( isset( $ccd_order_options['objects'] ) && is_array( $ccd_order_options['objects'] ) ) {
+			$objects = $ccd_order_options['objects'];
 		} else {
 			$objects = [];
 		}
@@ -770,14 +770,14 @@ class Types_Taxes_Order {
 	 */
 	public function get_order_options_tags() {
 
-		if ( $scp_order_options = get_option( 'scp_order_options' ) ) {
-			$scp_order_options = get_option( 'scp_order_options' );
+		if ( $ccd_order_options = get_option( 'ccd_order_options' ) ) {
+			$ccd_order_options = get_option( 'ccd_order_options' );
 		} else {
-			$scp_order_options = [];
+			$ccd_order_options = [];
 		}
 
-		if ( isset( $scp_order_options['tags'] ) && is_array( $scp_order_options['tags'] ) ) {
-			$tags = $scp_order_options['tags'];
+		if ( isset( $ccd_order_options['tags'] ) && is_array( $ccd_order_options['tags'] ) ) {
+			$tags = $ccd_order_options['tags'];
 		} else {
 			$tags = [];
 		}

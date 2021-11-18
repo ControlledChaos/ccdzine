@@ -2,17 +2,17 @@
 /**
  * Admin ACF options page
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Alias namespaces.
-use SiteCore\Classes\Vendor as Vendor;
+use CCDzine\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

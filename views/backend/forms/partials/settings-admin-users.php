@@ -2,13 +2,13 @@
 /**
  * Form fields for admin settings users tab
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
  */
 
-namespace SiteCore\Views\Admin;
-use SiteCore\Classes\Admin as Admin;
+namespace CCDzine\Views\Admin;
+use CCDzine\Classes\Admin as Admin;
 
 ?>

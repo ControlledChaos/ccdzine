@@ -2,15 +2,15 @@
 /**
  * Content settings class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes\Settings as Settings;
+namespace CCDzine\Classes\Admin;
+use CCDzine\Classes\Settings as Settings;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -121,16 +121,16 @@ class Content_Settings extends Add_Settings_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-intro',
-			'tab'        => __( 'Intro', 'sitecore' ),
-			'heading'    => __( 'Introduction', 'sitecore' ),
+			'tab'        => __( 'Intro', 'ccdzine' ),
+			'heading'    => __( 'Introduction', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'intro_tab' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-sample',
-			'tab'        => __( 'Another', 'sitecore' ),
-			'heading'    => __( 'Sample Tab', 'sitecore' ),
+			'tab'        => __( 'Another', 'ccdzine' ),
+			'heading'    => __( 'Sample Tab', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
@@ -144,7 +144,7 @@ class Content_Settings extends Add_Settings_Page {
 	 * @return string Returns the page heading.
 	 */
 	protected function heading() {
-		return __( 'Content Settings', 'sitecore' );
+		return __( 'Content Settings', 'ccdzine' );
 	}
 
 	/**
@@ -155,7 +155,7 @@ class Content_Settings extends Add_Settings_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function intro_tab() {
-		include SCP_PATH . 'views/backend/pages/partials/settings-content-intro.php';
+		include CCD_PATH . 'views/backend/pages/partials/settings-content-intro.php';
 	}
 
 	/**
@@ -166,6 +166,6 @@ class Content_Settings extends Add_Settings_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function sample_tab() {
-		include SCP_PATH . 'views/backend/pages/partials/settings-content-sample.php';
+		include CCD_PATH . 'views/backend/pages/partials/settings-content-sample.php';
 	}
 }

@@ -2,13 +2,13 @@
 /**
  * Frontend class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace CCDzine\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

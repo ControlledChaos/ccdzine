@@ -2,7 +2,7 @@
 /**
  * ACF content dashboard tab
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Widgets
  * @since      1.0.0

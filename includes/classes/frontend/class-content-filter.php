@@ -7,13 +7,13 @@
  * Content is from the default rich text
  * editor or block editor in WordPress 5.0+.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace CCDzine\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -100,8 +100,8 @@ class Content_Filter {
 	 * @return void
 	 */
 	public function before_content() {
-		$before_content = do_action( 'SiteCore\before_content_filter' );
-		return apply_filters( 'scp_before_content_filter', $before_content );
+		$before_content = do_action( 'CCDzine\before_content_filter' );
+		return apply_filters( 'ccd_before_content_filter', $before_content );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Content_Filter {
 	 * @return void
 	 */
 	public function after_content() {
-		$after_content = do_action( 'SiteCore\after_content_filter' );
-		return apply_filters( 'scp_after_content_filter', $after_content );
+		$after_content = do_action( 'CCDzine\after_content_filter' );
+		return apply_filters( 'ccd_after_content_filter', $after_content );
 	}
 }

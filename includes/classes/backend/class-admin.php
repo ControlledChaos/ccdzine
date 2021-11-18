@@ -2,16 +2,16 @@
 /**
  * Admin class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes as Classes,
-	SiteCore\Compatibility  as Compat,
-	SiteCore\Classes\Vendor as Vendor;
+namespace CCDzine\Classes\Admin;
+use CCDzine\Classes as Classes,
+	CCDzine\Compatibility  as Compat,
+	CCDzine\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -74,7 +74,7 @@ class Admin {
 		add_action( 'admin_head', [ $this, 'admin_only_updates' ], 1 );
 
 		// Remove Site Health from menu.
-		if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+		if ( defined( 'CCD_ALLOW_SITE_HEALTH' ) && ! CCD_ALLOW_SITE_HEALTH ) {
 			add_action( 'admin_menu', [ $this, 'menu_remove_site_health' ] );
 		}
 
@@ -133,7 +133,7 @@ class Admin {
 		 * child classes of the `Add_Page` class. This creates tabbed
 		 * content on admin pages, settings pages, & the dashboard.
 		 */
-		wp_enqueue_script( SCP_CONFIG['admin_slug'] . '-tabs', SCP_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
+		wp_enqueue_script( CCD_CONFIG['admin_slug'] . '-tabs', CCD_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
 	}
 
 	/**
@@ -162,7 +162,7 @@ class Admin {
 		 *
 		 * @since 1.0.0
 		 */
-		wp_enqueue_style( SCP_CONFIG['admin_slug'] . '-admin', SCP_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
+		wp_enqueue_style( CCD_CONFIG['admin_slug'] . '-admin', CCD_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
 
 		/**
 		 * Enqueue admin tabs styles
@@ -171,7 +171,7 @@ class Admin {
 		 * child classes of the `Add_Page` class. This creates tabbed
 		 * content on admin pages, settings pages, & the dashboard.
 		 */
-		wp_enqueue_style( SCP_CONFIG['admin_slug'] . '-tabs', SCP_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
+		wp_enqueue_style( CCD_CONFIG['admin_slug'] . '-tabs', CCD_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
 	}
 
 	/**
@@ -320,8 +320,8 @@ class Admin {
 
 		// Add a new top-level Menus page.
 		add_menu_page(
-			__( 'Navigation Menus', 'sitecore' ),
-			__( 'Navigation', 'sitecore' ),
+			__( 'Navigation Menus', 'ccdzine' ),
+			__( 'Navigation', 'ccdzine' ),
 			'delete_others_pages',
 			'nav-menus.php',
 			'',
@@ -331,8 +331,8 @@ class Admin {
 
 		// Add a new top-level Widgets page.
 		add_menu_page(
-			__( 'Widgets', 'sitecore' ),
-			__( 'Widgets', 'sitecore' ),
+			__( 'Widgets', 'ccdzine' ),
+			__( 'Widgets', 'ccdzine' ),
 			'delete_others_pages',
 			'widgets.php',
 			'',
@@ -382,8 +382,8 @@ class Admin {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 			get_bloginfo( 'name' ),
 			esc_html__( 'is managed by the' ),
-			esc_url( SCP_PLUGIN_URL ),
-			esc_html( SCP_NAME ),
+			esc_url( CCD_PLUGIN_URL ),
+			esc_html( CCD_NAME ),
 			esc_html__( 'plugin' )
 		);
 
@@ -404,18 +404,18 @@ class Admin {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 			get_bloginfo( 'name' ),
 			esc_html__( 'website was designed & developed by' ),
-			esc_url( SCP_DEV_URL ),
-			esc_html( SCP_DEV_NAME )
+			esc_url( CCD_DEV_URL ),
+			esc_html( CCD_DEV_NAME )
 		);
 
 		// Developer email option.
 		$dev_email = sprintf(
 			'%s %s %s <a href="mailto:%s">%s</a>',
 			esc_html__( 'Contact' ),
-			esc_html( SCP_DEV_NAME ),
+			esc_html( CCD_DEV_NAME ),
 			esc_html__( 'for website assistance:' ),
-			esc_html( SCP_DEV_EMAIL ),
-			esc_html( SCP_DEV_EMAIL )
+			esc_html( CCD_DEV_EMAIL ),
+			esc_html( CCD_DEV_EMAIL )
 		);
 
 		echo $name;
@@ -439,8 +439,8 @@ class Admin {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 			get_bloginfo( 'name' ),
 			esc_html__( 'is managed by the' ),
-			esc_url( SCP_PLUGIN_URL ),
-			esc_html( SCP_NAME ),
+			esc_url( CCD_PLUGIN_URL ),
+			esc_html( CCD_NAME ),
 			esc_html__( 'plugin' )
 		);
 
@@ -461,18 +461,18 @@ class Admin {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 			get_bloginfo( 'name' ),
 			esc_html__( 'website was designed & developed by' ),
-			esc_url( SCP_DEV_URL ),
-			esc_html( SCP_DEV_NAME )
+			esc_url( CCD_DEV_URL ),
+			esc_html( CCD_DEV_NAME )
 		);
 
 		// Developer email option.
 		$dev_email = sprintf(
 			'%s %s %s <a href="mailto:%s">%s</a>',
 			esc_html__( 'Contact' ),
-			esc_html( SCP_DEV_NAME ),
+			esc_html( CCD_DEV_NAME ),
 			esc_html__( 'for website assistance:' ),
-			esc_html( SCP_DEV_EMAIL ),
-			esc_html( SCP_DEV_EMAIL )
+			esc_html( CCD_DEV_EMAIL ),
+			esc_html( CCD_DEV_EMAIL )
 		);
 
 		echo $dev_email;

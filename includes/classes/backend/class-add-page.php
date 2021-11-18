@@ -2,15 +2,15 @@
 /**
  * Add page class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes as Classes;
+namespace CCDzine\Classes\Admin;
+use CCDzine\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -218,7 +218,7 @@ class Add_Page {
 	 * @return string Returns the conditional menu label.
 	 */
 	protected function page_title() {
-		return __( $this->page_title, 'sitecore' );
+		return __( $this->page_title, 'ccdzine' );
 	}
 
 	/**
@@ -229,7 +229,7 @@ class Add_Page {
 	 * @return string Returns the conditional menu label.
 	 */
 	protected function menu_title() {
-		return ucwords( __( $this->menu_title, 'sitecore' ) );
+		return ucwords( __( $this->menu_title, 'ccdzine' ) );
 	}
 
 	/**
@@ -254,7 +254,7 @@ class Add_Page {
 
 		$description = sprintf(
 			'<p class="description">%s</p>',
-			__( $this->description, 'sitecore' )
+			__( $this->description, 'ccdzine' )
 		);
 
 		if ( ! empty( $this->description ) ) {
@@ -574,7 +574,7 @@ class Add_Page {
 	 * Page content
 	 *
 	 * This can be used in the default `callback()` method.
-	 * Hooking into `scp_submanu_page_content` adds
+	 * Hooking into `ccd_submanu_page_content` adds
 	 * content/markup inside the standard page markup.
 	 * Use a new `callback()` method to override these defaults.
 	 *
@@ -611,7 +611,7 @@ class Add_Page {
 		// Print a heading using the menu title variable.
 		echo  sprintf(
 			'<h1>%s</h1>',
-			__( $this->heading(), 'sitecore' )
+			__( $this->heading(), 'ccdzine' )
 		);
 
 		// Print a paragraph with native description class using the description variable.
@@ -640,7 +640,7 @@ class Add_Page {
 		// More information tab.
 		$screen->add_help_tab( [
 			'id'       => 'more_info',
-			'title'    => __( 'More Information', 'sitecore' ),
+			'title'    => __( 'More Information', 'ccdzine' ),
 			'content'  => null,
 			'callback' => [ $this, 'more_info' ]
 		] );
@@ -659,7 +659,7 @@ class Add_Page {
 	 * @return void
 	 */
 	public function more_info() {
-		include_once SCP_PATH . 'views/backend/help/sample-more-info.php';
+		include_once CCD_PATH . 'views/backend/help/sample-more-info.php';
 	}
 
 	/**
@@ -678,7 +678,7 @@ class Add_Page {
 
 		ob_start();
 
-		include_once SCP_PATH . 'views/backend/help/sample-sidebar.php';
+		include_once CCD_PATH . 'views/backend/help/sample-sidebar.php';
 
 		$html = ob_get_clean();
 

@@ -1,29 +1,29 @@
 <?php
 /**
- * Site Core plugin
+ * Controlled Chaos Design plugin
  *
- * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
+ * Site-specific plugin for the Controlled Chaos Design website.
  *
- * @package  Site_Core
+ * @package  CCDzine
  * @category Core
  * @since    1.0.0
- * @link     https://github.com/ControlledChaos/sitecore
+ * @link     https://github.com/ControlledChaos/ccdzine
  *
- * Plugin Name:  Site Core
- * Plugin URI:   https://github.com/ControlledChaos/sitecore
- * Description:  Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
+ * Plugin Name:  Controlled Chaos Design
+ * Plugin URI:   https://github.com/ControlledChaos/ccdzine
+ * Description:  Site-specific plugin for the Controlled Chaos Design website.
  * Version:      1.0.0
  * Author:       Controlled Chaos Design
  * Author URI:   https://ccdzine.com/
- * Text Domain:  sitecore
+ * Text Domain:  ccdzine
  * Domain Path:  /languages
  * Requires PHP  5.4
  */
 
-namespace SiteCore;
+namespace CCDzine;
 
 // Alias namespaces.
-use SiteCore\Classes\Activate as Activate;
+use CCDzine\Classes\Activate as Activate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -83,30 +83,30 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Following is a list of strings to find and replace in all plugin files.
  *
  * 1. Plugin name
- *    Find `Site Core` and replace with your plugin name.
+ *    Find `Controlled Chaos Design` and replace with your plugin name.
  *
  * 2. Package
- *    Find `Site_Core` and replace with your plugin name. This will
+ *    Find `CCDzine` and replace with your plugin name. This will
  *    change the package name in file headers.
  *
  * 3. Namespace
- *    Find `SiteCore` and replace with something unique to your plugin.
+ *    Find `CCDzine` and replace with something unique to your plugin.
  *
  * 4. Text domain
- *    Find `sitecore` and replace with the new name of your
+ *    Find `ccdzine` and replace with the new name of your
  *    primary plugin file (this file). It is standard to match the domain
  *    with the file name but this is not required to run the code.
  *
  * 5. Admin page slug
- *    Find `site-core` and replace with the new base slug of your
+ *    Find `ccdzine` and replace with the new base slug of your
  *    plugin's admin pages.
  *
  * 6. Constants prefix
- *    Find `SCP` and replace with something unique to your plugin. Use
+ *    Find `CCD` and replace with something unique to your plugin. Use
  *    only uppercase letters.
  *
  * 7. General prefix
- *    Find `scp` and replace with something unique to your plugin name. Use
+ *    Find `ccd` and replace with something unique to your plugin name. Use
  *    only lowercase letters. This will change the prefix of all filters and
  *    settings, and the prefix of functions outside of a class.
  *
@@ -115,7 +115,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *    plugin name & URL, plus more personal or white-label constants.
  *
  * 9. Plugin URI:
- *    Find `https://github.com/ControlledChaos/sitecore` and replace with the
+ *    Find `https://github.com/ControlledChaos/ccdzine` and replace with the
  *    URI of your plugin.
  *
  * 10. Change the developer backup account info in the `Users` class.
@@ -134,7 +134,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The base name of this plugin file.
  */
-define( 'SCP_BASENAME', plugin_basename( __FILE__ ) );
+define( 'CCD_BASENAME', plugin_basename( __FILE__ ) );
 
 // Get the PHP version class.
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-php-version.php';
@@ -151,10 +151,10 @@ require plugin_dir_path( __FILE__ ) . 'config.php';
  */
 
 // Get the plugin activation class.
-include_once SCP_PATH . 'activate/classes/class-activate.php';
+include_once CCD_PATH . 'activate/classes/class-activate.php';
 
 // Get the plugin deactivation class.
-include_once SCP_PATH . 'activate/classes/class-deactivate.php';
+include_once CCD_PATH . 'activate/classes/class-deactivate.php';
 
 /**
  * Register the activation & deactivation hooks
@@ -234,4 +234,4 @@ if ( ! Classes\php()->version() ) {
 }
 
 // Get the plugin initialization file.
-require_once SCP_PATH . 'init.php';
+require_once CCD_PATH . 'init.php';

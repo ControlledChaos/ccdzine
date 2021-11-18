@@ -328,15 +328,15 @@
   max-width: 1024px;
 }
 
-.scp-admin-header .admin-site-branding {
+.ccd-admin-header .admin-site-branding {
   padding-top: 1.5em;
 }
 
-.scp-admin-header .admin-site-branding .admin-site-title {
+.ccd-admin-header .admin-site-branding .admin-site-title {
   margin-top: 0;
 }
 
-.scp-admin-header .admin-navigation .admin-navigation-list li {
+.ccd-admin-header .admin-navigation .admin-navigation-list li {
   display: inline;
   margin-right: 0.75em;
 }
@@ -534,7 +534,7 @@ html .backend-tabbed-content .ui-button.ui-state-disabled:hover {
   user-select: all;
 }
 
-.scp-bullet-list {
+.ccd-bullet-list {
   list-style: disc;
   margin-left: 1em;
 }

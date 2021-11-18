@@ -4,14 +4,14 @@
  *
  * @link http://ogp.me/
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Front
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Classes\Front\Meta as Meta;
+use CCDzine\Classes\Front\Meta as Meta;
 
 ?>
 <!-- Open Graph meta tags -->

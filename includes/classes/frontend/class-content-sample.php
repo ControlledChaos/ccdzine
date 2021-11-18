@@ -2,16 +2,16 @@
 /**
  * Sample post content filter
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace CCDzine\Classes\Front;
 
 // Alias namespaces.
-use SiteCore\Classes\Vendor as Vendor;
+use CCDzine\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -134,7 +134,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . 'views/frontend/content/content-archive-sample' . $acf->suffix() . '.php';
+			include CCD_PATH . 'views/frontend/content/content-archive-sample' . $acf->suffix() . '.php';
 		}
 	}
 
@@ -163,7 +163,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . 'views/frontend/content/content-single-sample' . $acf->suffix() . '.php';
+			include CCD_PATH . 'views/frontend/content/content-single-sample' . $acf->suffix() . '.php';
 		}
 	}
 
@@ -192,7 +192,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . 'views/frontend/content/content-taxonomy-sample' . $acf->suffix() . '.php';
+			include CCD_PATH . 'views/frontend/content/content-taxonomy-sample' . $acf->suffix() . '.php';
 		}
 	}
 }

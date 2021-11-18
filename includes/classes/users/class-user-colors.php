@@ -2,13 +2,13 @@
 /**
  * User colors class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Users;
+namespace CCDzine\Classes\Users;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +59,7 @@ class User_Colors {
 		 * use the "Fresh" label is applied in that instance.
 		 */
 		if ( ! $scheme || 'fresh' == $option ) {
-			$name = __( 'Fresh', 'sitecore' );
+			$name = __( 'Fresh', 'ccdzine' );
 
 		// Use the scheme name if available.
 		} elseif ( $scheme ) {
@@ -67,7 +67,7 @@ class User_Colors {
 
 		// A fallback that is likely unnecessary.
 		} else {
-			$name = __( 'Not available', 'sitecore' );
+			$name = __( 'Not available', 'ccdzine' );
 		}
 
 		// The name of the color scheme.

@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Core plugin
+ * Controlled Chaos Design plugin
  *
- * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
+ * Site-specific plugin for the Controlled Chaos Design website.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Init
  * @category   Core
  * @since      1.0.0

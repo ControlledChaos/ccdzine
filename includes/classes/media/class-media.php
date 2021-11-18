@@ -2,13 +2,13 @@
 /**
  * Media class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Media;
+namespace CCDzine\Classes\Media;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -216,7 +216,7 @@ class Media {
 		global $post;
 
 		// Apply a filter for conditional image sizes.
-		$size = apply_filters( 'scp_rss_featured_image_size', 'medium' );
+		$size = apply_filters( 'ccd_rss_featured_image_size', 'medium' );
 
 		/**
 		 * Use this layout only if the post has a featured image.

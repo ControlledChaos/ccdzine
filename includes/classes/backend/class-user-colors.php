@@ -2,13 +2,13 @@
 /**
  * User colors class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace Site_Core\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

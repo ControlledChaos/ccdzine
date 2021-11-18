@@ -15,7 +15,7 @@
 	display: none;
 }
 
-#dashboard-widgets #normal-sortables > div:not( #scp-dashboard ) {
+#dashboard-widgets #normal-sortables > div:not( #ccd-dashboard ) {
 	display: none;
 }
 
@@ -23,15 +23,15 @@
 	width: 100% !important;
 }
 
-#scp-dashboard.postbox {
+#ccd-dashboard.postbox {
 	border: none;
 }
 
-#scp-dashboard .postbox-header {
+#ccd-dashboard .postbox-header {
 	display: none;
 }
 
-#scp-dashboard .inside {
+#ccd-dashboard .inside {
 	display: block !important;
 	// max-width: 1280px;
 	padding: 0;

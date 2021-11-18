@@ -2,13 +2,13 @@
 /**
  * Frontend template filters
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace CCDzine\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -76,7 +76,7 @@ class Template_Filters {
 		) {
 			return sprintf(
 				'<p>%s</p>',
-				__( 'This is a filtered sample description for the default post type.', 'sitecore' )
+				__( 'This is a filtered sample description for the default post type.', 'ccdzine' )
 			);
 
 		// Sample post type description.
@@ -86,7 +86,7 @@ class Template_Filters {
 		) {
 			return sprintf(
 				'<p>%s</p>',
-				__( 'This is a filtered description for the sample post type.', 'sitecore' )
+				__( 'This is a filtered description for the sample post type.', 'ccdzine' )
 			);
 		}
 		return $description;

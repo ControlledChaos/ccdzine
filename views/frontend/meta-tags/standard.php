@@ -4,14 +4,14 @@
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Front
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Classes\Front\Meta as Meta;
+use CCDzine\Classes\Front\Meta as Meta;
 
 ?>
 <?php echo "\r"; ?>

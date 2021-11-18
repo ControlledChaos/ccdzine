@@ -4,7 +4,7 @@
  *
  * Disable Google's next-generation tracking technology.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Tools
  * @since      1.0.0
@@ -13,7 +13,7 @@
  * @link https://codepotent.com/classicpress/plugins/disable-floc/
  */
 
-namespace SiteCore\Classes\Tools;
+namespace CCDzine\Classes\Tools;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

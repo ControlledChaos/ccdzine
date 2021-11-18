@@ -8,13 +8,13 @@
  * This is sample has been made consistent with
  * the rest of this plugin.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Fields
  * @category   ACF
  * @since      1.0.0
  */
 
-namespace SiteCore\Fields\ACF;
+namespace CCDzine\Fields\ACF;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 acf_add_local_field_group( [
 	'key'    => 'group_sample_sub_options_page',
-	'title'  => __( 'Sample Options Subpage', 'sitecore' ),
+	'title'  => __( 'Sample Options Subpage', 'ccdzine' ),
 	'fields' => [
 		[
 			'key'               => 'field_6036c10a75eed',
-			'label'             => __( 'Sample Options Subpage Field', 'sitecore' ),
+			'label'             => __( 'Sample Options Subpage Field', 'ccdzine' ),
 			'name'              => 'sample_options_subpage_field',
 			'type'              => 'text',
-			'instructions'      => __( 'Sample instructions.', 'sitecore' ),
+			'instructions'      => __( 'Sample instructions.', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -49,9 +49,9 @@ acf_add_local_field_group( [
 				5 => 'test_tax_one',
 			],
 			'default_value' => '',
-			'placeholder'   => __( 'Just a text field.', 'sitecore' ),
-			'prepend'       => __( '', 'sitecore' ),
-			'append'        => __( '', 'sitecore' ),
+			'placeholder'   => __( 'Just a text field.', 'ccdzine' ),
+			'prepend'       => __( '', 'ccdzine' ),
+			'append'        => __( '', 'ccdzine' ),
 			'maxlength'     => '',
 			'acfe_field_group_condition' => 0,
 		],
@@ -72,7 +72,7 @@ acf_add_local_field_group( [
 	'instruction_placement' => 'field',
 	'hide_on_screen'        => '',
 	'active'                => true,
-	'description'           => __( 'Field group provided as a sample for the sample options subpage.', 'sitecore' ),
+	'description'           => __( 'Field group provided as a sample for the sample options subpage.', 'ccdzine' ),
 	'acfe_autosync'         => [
 		0 => 'json',
 	],

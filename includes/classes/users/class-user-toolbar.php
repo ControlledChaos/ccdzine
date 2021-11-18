@@ -2,7 +2,7 @@
 /**
  * User Toolbar class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
@@ -10,7 +10,7 @@
  * @todo Add toolbar menus to admin settings page(s).
  */
 
-namespace SiteCore\Classes\Users;
+namespace CCDzine\Classes\Users;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,12 +53,12 @@ class User_Toolbar {
 
 		register_nav_menus(
 			[
-			'backend_toolbar_site'  => esc_html__( 'Admin Toolbar: Site Name', 'sitecore' ),
-			'backend_toolbar_main'  => esc_html__( 'Admin Toolbar: Main', 'sitecore' ),
-			'backend_toolbar_user'  => esc_html__( 'Admin Toolbar: User', 'sitecore' ),
-			'frontend_toolbar_site' => esc_html__( 'Frontend Toolbar: Site Name', 'sitecore' ),
-			'frontend_toolbar_main' => esc_html__( 'Frontend Toolbar: Main', 'sitecore' ),
-			'frontend_toolbar_user' => esc_html__( 'Frontend Toolbar: User', 'sitecore' )
+			'backend_toolbar_site'  => esc_html__( 'Admin Toolbar: Site Name', 'ccdzine' ),
+			'backend_toolbar_main'  => esc_html__( 'Admin Toolbar: Main', 'ccdzine' ),
+			'backend_toolbar_user'  => esc_html__( 'Admin Toolbar: User', 'ccdzine' ),
+			'frontend_toolbar_site' => esc_html__( 'Frontend Toolbar: Site Name', 'ccdzine' ),
+			'frontend_toolbar_main' => esc_html__( 'Frontend Toolbar: Main', 'ccdzine' ),
+			'frontend_toolbar_user' => esc_html__( 'Frontend Toolbar: User', 'ccdzine' )
 			]
 		);
 	}

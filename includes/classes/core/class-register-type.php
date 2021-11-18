@@ -2,7 +2,7 @@
 /**
  * Base class to register a post type
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
@@ -24,7 +24,7 @@
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -415,9 +415,9 @@ class Register_Type {
 	protected function options() {
 
 		$options = [
-			'label'                 => __( ucwords( $this->plural ), 'sitecore' ),
+			'label'                 => __( ucwords( $this->plural ), 'ccdzine' ),
 			'labels'                => $this->labels(),
-			'description'           => __( ucfirst( $this->description ), 'sitecore' ),
+			'description'           => __( ucfirst( $this->description ), 'ccdzine' ),
 			'public'                => $this->public,
 			'hierarchical'          => $this->hierarchical,
 			'exclude_from_search'   => $this->exclude_from_search,
@@ -464,32 +464,32 @@ class Register_Type {
 	protected function labels() {
 
 		$labels = [
-			'name'                  => __( ucwords( $this->plural ), 'sitecore' ),
-			'singular_name'         => __( ucwords( $this->singular ), 'sitecore' ),
-			'menu_name'             => __( ucwords( $this->plural ), 'sitecore' ),
-			'all_items'             => __( 'All ' . ucwords( $this->plural ), 'sitecore' ),
-			'add_new'               => __( 'Add New', 'sitecore' ),
-			'add_new_item'          => __( 'Add New ' . ucwords( $this->singular ), 'sitecore' ),
-			'edit_item'             => __( 'Edit ' . ucwords( $this->singular ), 'sitecore' ),
-			'new_item'              => __( 'New ' . ucwords( $this->singular ), 'sitecore' ),
-			'view_item'             => __( 'View ' . ucwords( $this->singular ), 'sitecore' ),
-			'view_items'            => __( 'View ' . ucwords( $this->plural ), 'sitecore' ),
-			'search_items'          => __( 'Search ' . ucwords( $this->plural ), 'sitecore' ),
-			'not_found'             => __( 'No ' . ucwords( $this->plural ) . ' Found', 'sitecore' ),
-			'not_found_in_trash'    => __( 'No ' . ucwords( $this->plural ) . ' Found in Trash', 'sitecore' ),
-			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
-			'featured_image'        => __( 'Featured image for this ' . strtolower( $this->singular ), 'sitecore' ),
-			'set_featured_image'    => __( 'Set featured image for this ' . strtolower( $this->singular ), 'sitecore' ),
-			'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( $this->singular ), 'sitecore' ),
-			'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( $this->singular ), 'sitecore' ),
-			'archives'              => __( ucwords( $this->singular ) . ' archives', 'sitecore' ),
-			'insert_into_item'      => __( 'Insert into ' . ucwords( $this->singular ), 'sitecore' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( $this->singular ), 'sitecore' ),
-			'filter_items_list'     => __( 'Filter ' . ucwords( $this->plural ), 'sitecore' ),
-			'items_list_navigation' => __( ucwords( $this->plural ) . ' list navigation', 'sitecore' ),
-			'items_list'            => __( ucwords( $this->plural ) . ' List', 'sitecore' ),
-			'attributes'            => __( ucwords( $this->singular ) . ' Attributes', 'sitecore' ),
-			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
+			'name'                  => __( ucwords( $this->plural ), 'ccdzine' ),
+			'singular_name'         => __( ucwords( $this->singular ), 'ccdzine' ),
+			'menu_name'             => __( ucwords( $this->plural ), 'ccdzine' ),
+			'all_items'             => __( 'All ' . ucwords( $this->plural ), 'ccdzine' ),
+			'add_new'               => __( 'Add New', 'ccdzine' ),
+			'add_new_item'          => __( 'Add New ' . ucwords( $this->singular ), 'ccdzine' ),
+			'edit_item'             => __( 'Edit ' . ucwords( $this->singular ), 'ccdzine' ),
+			'new_item'              => __( 'New ' . ucwords( $this->singular ), 'ccdzine' ),
+			'view_item'             => __( 'View ' . ucwords( $this->singular ), 'ccdzine' ),
+			'view_items'            => __( 'View ' . ucwords( $this->plural ), 'ccdzine' ),
+			'search_items'          => __( 'Search ' . ucwords( $this->plural ), 'ccdzine' ),
+			'not_found'             => __( 'No ' . ucwords( $this->plural ) . ' Found', 'ccdzine' ),
+			'not_found_in_trash'    => __( 'No ' . ucwords( $this->plural ) . ' Found in Trash', 'ccdzine' ),
+			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->singular ), 'ccdzine' ),
+			'featured_image'        => __( 'Featured image for this ' . strtolower( $this->singular ), 'ccdzine' ),
+			'set_featured_image'    => __( 'Set featured image for this ' . strtolower( $this->singular ), 'ccdzine' ),
+			'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( $this->singular ), 'ccdzine' ),
+			'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( $this->singular ), 'ccdzine' ),
+			'archives'              => __( ucwords( $this->singular ) . ' archives', 'ccdzine' ),
+			'insert_into_item'      => __( 'Insert into ' . ucwords( $this->singular ), 'ccdzine' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( $this->singular ), 'ccdzine' ),
+			'filter_items_list'     => __( 'Filter ' . ucwords( $this->plural ), 'ccdzine' ),
+			'items_list_navigation' => __( ucwords( $this->plural ) . ' list navigation', 'ccdzine' ),
+			'items_list'            => __( ucwords( $this->plural ) . ' List', 'ccdzine' ),
+			'attributes'            => __( ucwords( $this->singular ) . ' Attributes', 'ccdzine' ),
+			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->singular ), 'ccdzine' ),
 		];
 
 		// Filter for child classes to modify this array.

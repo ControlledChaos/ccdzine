@@ -2,13 +2,13 @@
 /**
  * Frontend meta tags
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front\Meta;
+namespace CCDzine\Classes\Front\Meta;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,7 +38,7 @@ class Meta_Tags {
 	 * @return boolean
 	 */
 	public function use_meta_tags() {
-		return apply_filters( 'scp_meta_use_tags', true );
+		return apply_filters( 'ccd_meta_use_tags', true );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Meta_Tags {
 	 * @return void
 	 */
 	public function meta() {
-		include SCP_PATH . 'views/frontend/meta-tags/standard.php';
+		include CCD_PATH . 'views/frontend/meta-tags/standard.php';
 	}
 
 	/**
@@ -82,7 +82,7 @@ class Meta_Tags {
 	 * @return void
 	 */
 	public function schema() {
-		include SCP_PATH . 'views/frontend/meta-tags/schema.php';
+		include CCD_PATH . 'views/frontend/meta-tags/schema.php';
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Meta_Tags {
 	 * @return void
 	 */
 	public function open_graph() {
-		include SCP_PATH . 'views/frontend/meta-tags/open-graph.php';
+		include CCD_PATH . 'views/frontend/meta-tags/open-graph.php';
 	}
 
 	/**
@@ -104,7 +104,7 @@ class Meta_Tags {
 	 * @return void
 	 */
 	public function twitter() {
-		include SCP_PATH . 'views/frontend/meta-tags/twitter.php';
+		include CCD_PATH . 'views/frontend/meta-tags/twitter.php';
 	}
 
 	/**
@@ -115,6 +115,6 @@ class Meta_Tags {
 	 * @return void
 	 */
 	public function dublin() {
-		include SCP_PATH . 'views/frontend/meta-tags/dublin.php';
+		include CCD_PATH . 'views/frontend/meta-tags/dublin.php';
 	}
 }

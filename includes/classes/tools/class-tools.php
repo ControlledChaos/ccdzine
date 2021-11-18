@@ -2,14 +2,14 @@
 /**
  * Tools class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Tools;
-use SiteCore\Classes as Classes;
+namespace CCDzine\Classes\Tools;
+use CCDzine\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,17 +2,17 @@
 /**
  * Register media type taxonomy
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Media;
+namespace CCDzine\Classes\Media;
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use CCDzine\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,18 +2,18 @@
 /**
  * Dashboard class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes,
-	SiteCore\Classes\Users as Users,
-	SiteCore\Classes\Vendor as Vendor;
+use CCDzine\Classes as Classes,
+	CCDzine\Classes\Users as Users,
+	CCDzine\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +47,7 @@ class Dashboard {
 		 * @todo Option to use the panel in addition to
 		 * the config file constant.
 		 */
-		if ( defined( 'SCP_USE_CUSTOM_DASHBOARD' ) && false != SCP_USE_CUSTOM_DASHBOARD ) :
+		if ( defined( 'CCD_USE_CUSTOM_DASHBOARD' ) && false != CCD_USE_CUSTOM_DASHBOARD ) :
 
 			// Enqueue dashboard panel styles.
 			add_action( 'admin_enqueue_scripts', [ $this, 'dashboard_panel_styles' ] );
@@ -64,7 +64,7 @@ class Dashboard {
 			// Add custom dashboard panel.
 			add_action( 'wp_dashboard_setup', [ $this, 'dashboard_panel' ] );
 
-		endif; // SCP_USE_CUSTOM_DASHBOARD
+		endif; // CCD_USE_CUSTOM_DASHBOARD
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Dashboard {
 		// remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
 
 		// Site Health.
-		if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+		if ( defined( 'CCD_ALLOW_SITE_HEALTH' ) && ! CCD_ALLOW_SITE_HEALTH ) {
 			remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
 		}
 
@@ -147,10 +147,10 @@ class Dashboard {
 
 		// Enqueue only on the Dashboard screen.
 		if ( $screen->id == 'dashboard' ) {
-			wp_enqueue_style( SCP_CONFIG['admin_slug'] . '-dashboard', SCP_URL .  'assets/css/dashboard-panel' . $suffix . '.css', [], null, 'screen' );
+			wp_enqueue_style( CCD_CONFIG['admin_slug'] . '-dashboard', CCD_URL .  'assets/css/dashboard-panel' . $suffix . '.css', [], null, 'screen' );
 
 			if ( is_rtl() ) {
-				wp_enqueue_style( SCP_CONFIG['admin_slug'] . '-dashboard-rtl', SCP_URL .  'assets/css/dashboard-panel-rtl' . $suffix . '.css', [], null, 'screen' );
+				wp_enqueue_style( CCD_CONFIG['admin_slug'] . '-dashboard-rtl', CCD_URL .  'assets/css/dashboard-panel-rtl' . $suffix . '.css', [], null, 'screen' );
 			}
 		}
 	}
@@ -181,7 +181,7 @@ class Dashboard {
 
 		$id = get_current_user_id();
 		$meta_value = [
-			'normal'  => 'scp-dashboard',
+			'normal'  => 'ccd-dashboard',
 			'side'    => '',
 			'column3' => '',
 			'column4' => '',
@@ -207,11 +207,11 @@ class Dashboard {
 		$heading = sprintf(
 			'%s %s',
 			get_bloginfo( 'name' ),
-			__( 'Dashboard', 'sitecore' )
+			__( 'Dashboard', 'ccdzine' )
 		);
 
 		wp_add_dashboard_widget(
-			'scp-dashboard',
+			'ccd-dashboard',
 			$heading,
 			[ $this, 'dashboard_template' ],
 			null,
@@ -241,7 +241,7 @@ class Dashboard {
 		if ( ! empty( $dashboard ) ) {
 			get_template_part( 'template-parts/admin/dashboard-panel' . $acf->suffix() );
 		} else {
-			include_once SCP_PATH . 'views/backend/widgets/dashboard-panel' . $acf->suffix() . '.php';
+			include_once CCD_PATH . 'views/backend/widgets/dashboard-panel' . $acf->suffix() . '.php';
 		}
 	}
 }
