@@ -151,6 +151,14 @@ if ( ! defined( 'CCD_CONFIG' ) ) {
 		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/ccdzine' ),
 
 		/**
+		 * Allow custom dashboard
+		 *
+		 * @since 1.0.0
+		 * @var   boolean Whether to allow custom dashboard.
+		 */
+		'dashboard' => true,
+
+		/**
 		 * Universal slug
 		 *
 		 * This URL slug is used for various plugin admin & settings pages.
@@ -244,6 +252,16 @@ if ( ! defined( 'CCD_DEV_EMAIL' ) ) {
  */
 if ( ! defined( 'CCD_PLUGIN_URL' ) ) {
 	define( 'CCD_PLUGIN_URL', CCD_CONFIG['plugin_url'] );
+}
+
+/**
+ * Allow custom dashboard
+ *
+ * @since 1.0.0
+ * @var   boolean Whether to allow the custom dashboard.
+ */
+if ( ! defined( 'CCD_USE_CUSTOM_DASHBOARD' ) ) {
+	define( 'CCD_USE_CUSTOM_DASHBOARD', CCD_CONFIG['dashboard'] );
 }
 
 /**

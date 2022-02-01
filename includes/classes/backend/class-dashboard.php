@@ -59,7 +59,7 @@ class Dashboard {
 			add_action( 'admin_init', [ $this, 'widget_order' ], 25 );
 
 			// Remove core welcome panel.
-			// remove_action( 'welcome_panel', 'wp_welcome_panel' );
+			remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
 			// Add custom dashboard panel.
 			add_action( 'wp_dashboard_setup', [ $this, 'dashboard_panel' ] );
