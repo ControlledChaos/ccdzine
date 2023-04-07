@@ -2,7 +2,7 @@
 /**
  * Sample widget display
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Views
  * @category   Front, Widgets
  * @since      1.0.0

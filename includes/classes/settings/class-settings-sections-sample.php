@@ -2,13 +2,13 @@
 /**
  * Sample settings sections
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Sections_Sample extends Settings_Sections {
 
@@ -23,8 +23,8 @@ class Settings_Sections_Sample extends Settings_Sections {
 
 		$sections = [
 			[
-				'id'       => 'scp-settings-section-sample',
-				'title'    => __( 'Sample Settings Section', 'sitecore' ),
+				'id'       => 'ccd-settings-section-sample',
+				'title'    => __( 'Sample Settings Section', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'general',
 				'args'     => [

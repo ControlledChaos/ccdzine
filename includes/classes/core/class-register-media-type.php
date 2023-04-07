@@ -2,13 +2,13 @@
 /**
  * Register media type taxonomy
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,9 +33,9 @@ class Register_Media_Type extends Register_Tax {
 		];
 
 		$labels = [
-			'singular'    => __( 'media type', 'sitecore' ),
-			'plural'      => __( 'media types', 'sitecore' ),
-			'description' => __( 'Organize the media library by file types.', 'sitecore' ),
+			'singular'    => __( 'media type', 'ccdzine' ),
+			'plural'      => __( 'media types', 'ccdzine' ),
+			'description' => __( 'Organize the media library by file types.', 'ccdzine' ),
 			'menu_icon'   => 'dashicons-tag'
 		];
 

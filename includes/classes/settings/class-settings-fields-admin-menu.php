@@ -2,15 +2,15 @@
 /**
  * Admin menu settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
-use function SiteCore\Core\platform_name;
+use function CCDzine\Core\platform_name;
 
 class Settings_Fields_Admin_Menu extends Settings_Fields {
 
@@ -26,24 +26,24 @@ class Settings_Fields_Admin_Menu extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'admin_menu_menus_top',
-				'title'    => __( 'Navigation Link', 'sitecore' ),
+				'title'    => __( 'Navigation Link', 'ccdzine' ),
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-menu',
+				'section'  => 'ccd-settings-section-admin-menu',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to make the link to the navigation menus screen a top-level menu entry.', 'sitecore' ),
+					'description' => __( 'Check to make the link to the navigation menus screen a top-level menu entry.', 'ccdzine' ),
 					'label_for'   => 'admin_menu_menus_top',
 					'class'       => 'admin-field'
 				]
 			],
 			[
 				'id'       => 'admin_menu_widgets_top',
-				'title'    => __( 'Widgets Link', 'sitecore' ),
+				'title'    => __( 'Widgets Link', 'ccdzine' ),
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-menu',
+				'section'  => 'ccd-settings-section-admin-menu',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to make the link to the widgets screen a top-level menu entry.', 'sitecore' ),
+					'description' => __( 'Check to make the link to the widgets screen a top-level menu entry.', 'ccdzine' ),
 					'label_for'   => 'admin_menu_widgets_top',
 					'class'       => 'admin-field'
 				]
@@ -92,7 +92,7 @@ class Settings_Fields_Admin_Menu extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_admin_menu_menus_top', $option );
+		return apply_filters( 'ccd_admin_menu_menus_top', $option );
 	}
 
 	/**
@@ -110,7 +110,7 @@ class Settings_Fields_Admin_Menu extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_admin_menu_widgets_top', $option );
+		return apply_filters( 'ccd_admin_menu_widgets_top', $option );
 	}
 
 	/**

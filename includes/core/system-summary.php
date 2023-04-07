@@ -2,15 +2,15 @@
 /**
  * System summary
  *
- * @package    SiteCore
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\System_Summary;
+namespace CCDzine\System_Summary;
 
-use SiteCore\Core as Core;
+use CCDzine\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -46,13 +46,13 @@ function php_version() {
 	// Markup of the notice.
 	$output = sprintf(
 		'%s <a href="%s" target="_blank" rel="nofollow noreferrer noopener">%s</a>',
-		__( 'The web server is running', 'sitecore' ),
+		__( 'The web server is running', 'ccdzine' ),
 		esc_url( 'https://www.php.net/releases/index.php' ),
 		'PHP ' . phpversion()
 	);
 
 	// Return the notice. Apply filter for customization.
-	return apply_filters( 'scp_php_version_notice', $output );
+	return apply_filters( 'ccd_php_version_notice', $output );
 }
 
 /**
@@ -106,7 +106,7 @@ function get_database_version() {
 
 	// If no database version is found.
 	} else {
-		$version = __( 'not available', 'sitecore' );
+		$version = __( 'not available', 'ccdzine' );
 	}
 
 	// Return the applicable string.
@@ -125,7 +125,7 @@ function database_reference() {
 	$url = esc_url( 'https://en.wikipedia.org/wiki/List_of_relational_database_management_systems' );
 
 	// Return the URL.
-	return apply_filters( 'scp_database_reference', $url );
+	return apply_filters( 'ccd_database_reference', $url );
 }
 
 /**
@@ -139,13 +139,13 @@ function database_version() {
 	// Markup of the notice.
 	$output = sprintf(
 		'%s <a href="%s" target="_blank" rel="nofollow noreferrer noopener">%s</a>',
-		__( 'The database version is', 'sitecore' ),
+		__( 'The database version is', 'ccdzine' ),
 		database_reference(),
 		get_database_version()
 	);
 
 	// Return the notice. Apply filter for customization.
-	return apply_filters( 'scp_database_version_notice', $output );
+	return apply_filters( 'ccd_database_version_notice', $output );
 }
 
 /**
@@ -163,9 +163,9 @@ function system_notice() {
 
 	// Text for site or network dashboard.
 	if ( is_multisite() && is_network_admin() ) {
-		$text = __( 'This network is running', 'sitecore' );
+		$text = __( 'This network is running', 'ccdzine' );
 	} else {
-		$text = __( 'This website is running', 'sitecore' );
+		$text = __( 'This website is running', 'ccdzine' );
 	}
 
 	// Check for ClassicPress.
@@ -192,7 +192,7 @@ function system_notice() {
 	}
 
 	// Return the notice. Apply filter for customization.
-	return apply_filters( 'scp_system_notice', $output );
+	return apply_filters( 'ccd_system_notice', $output );
 }
 
 /**
@@ -206,11 +206,11 @@ function search_engines() {
 
 	// Text for network dashboards.
 	if ( is_multisite() && is_network_admin() ) {
-		$text = __( 'Search engines are discouraged for the primary site', 'sitecore' );
+		$text = __( 'Search engines are discouraged for the primary site', 'ccdzine' );
 
 	// Text for site dashboards.
 	} else {
-		$text = __( 'Search engines are discouraged', 'sitecore' );
+		$text = __( 'Search engines are discouraged', 'ccdzine' );
 	}
 
 	// Check if search engines are asked not to index the site.
@@ -221,7 +221,7 @@ function search_engines() {
 	) {
 		// Markup of the notice.
 		$output = sprintf(
-			'<a class="scp-search-engines" href="%s">%s</a>',
+			'<a class="ccd-search-engines" href="%s">%s</a>',
 			esc_url( admin_url( 'options-reading.php' ) ),
 			$text
 		);
@@ -232,7 +232,7 @@ function search_engines() {
 	}
 
 	// Return the notice. Apply filter for customization.
-	return apply_filters( 'scp_search_engines', $output );
+	return apply_filters( 'ccd_search_engines', $output );
 }
 
 /**
@@ -253,12 +253,12 @@ function available_themes() {
 	if ( ! empty( $themes ) ) {
 
 		// Conditional text by theme count.
-		$before = _n( 'There is', 'There are', intval( $themes ), 'sitecore' );
+		$before = _n( 'There is', 'There are', intval( $themes ), 'ccdzine' );
 
 		if ( is_network_admin() ) {
-			$after = _n( 'network enabled theme.', 'network enabled themes.', intval( $themes ), 'sitecore' );
+			$after = _n( 'network enabled theme.', 'network enabled themes.', intval( $themes ), 'ccdzine' );
 		} else {
-			$after = _n( 'available theme.', 'available themes.', intval( $themes ), 'sitecore' );
+			$after = _n( 'available theme.', 'available themes.', intval( $themes ), 'ccdzine' );
 		}
 
 		// Link to the themes page if the current user can manage themes.
@@ -285,7 +285,7 @@ function available_themes() {
 	} else {
 		$html = sprintf(
 			'%s',
-			__( 'There are no themes available.', 'sitecore' )
+			__( 'There are no themes available.', 'ccdzine' )
 		);
 	}
 
@@ -338,7 +338,7 @@ function active_theme() {
 		if ( is_network_admin() ) {
 			$theme_name = sprintf(
 				'%s <a href="%s" target="_blank" rel="nofollow noreferrer noopener">%s</a>',
-				__( 'The active theme of the primary site is', 'sitecore' ),
+				__( 'The active theme of the primary site is', 'ccdzine' ),
 				active_theme_uri(),
 				$theme_name
 			);
@@ -347,7 +347,7 @@ function active_theme() {
 		} else {
 			$theme_name = sprintf(
 				'%s <a href="%s" target="_blank" rel="nofollow noreferrer noopener">%s</a>',
-				__( 'The active theme is', 'sitecore' ),
+				__( 'The active theme is', 'ccdzine' ),
 				active_theme_uri(),
 				$theme_name
 			);
@@ -364,7 +364,7 @@ function active_theme() {
 		if ( is_network_admin() ) {
 			$theme_name = sprintf(
 				'%s <a href="%s">%s</a>',
-				__( 'The active theme of the primary site is', 'sitecore' ),
+				__( 'The active theme of the primary site is', 'ccdzine' ),
 				esc_url( self_admin_url( 'themes.php' ) ),
 				$theme_name
 			);
@@ -373,7 +373,7 @@ function active_theme() {
 		} else {
 			$theme_name = sprintf(
 				'%s <a href="%s">%s</a>',
-				__( 'The active theme is', 'sitecore' ),
+				__( 'The active theme is', 'ccdzine' ),
 				esc_url( admin_url( 'themes.php' ) ),
 				$theme_name
 			);
@@ -383,11 +383,11 @@ function active_theme() {
 	} else {
 		$theme_name = sprintf(
 			'%s %s',
-			__( 'The active theme is', 'sitecore' ),
+			__( 'The active theme is', 'ccdzine' ),
 			$theme_name
 		);
 	}
 
 	// Return the notice. Apply filter for customization.
-	return apply_filters( 'scp_active_theme', $theme_name );
+	return apply_filters( 'ccd_active_theme', $theme_name );
 }

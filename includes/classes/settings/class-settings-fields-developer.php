@@ -2,13 +2,13 @@
 /**
  * Developer tools settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Fields_Developer extends Settings_Fields {
 
@@ -24,49 +24,49 @@ class Settings_Fields_Developer extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'direction_switch',
-				'title'    => __( 'Direction Switcher', 'sitecore' ),
+				'title'    => __( 'Direction Switcher', 'ccdzine' ),
 				'callback' => [ $this, 'direction_switch_callback' ],
 				'page'     => 'developer-tools',
-				'section'  => 'scp-options-developer',
+				'section'  => 'ccd-options-developer',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Easily switch backend and frontend screens between left-to-right and right-to-left orientations.', 'sitecore' ),
+					'description' => __( 'Easily switch backend and frontend screens between left-to-right and right-to-left orientations.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			],
 			[
 				'id'       => 'customizer_reset',
-				'title'    => __( 'Customizer Reset', 'sitecore' ),
+				'title'    => __( 'Customizer Reset', 'ccdzine' ),
 				'callback' => [ $this, 'customizer_reset_callback' ],
 				'page'     => 'developer-tools',
-				'section'  => 'scp-options-developer',
+				'section'  => 'ccd-options-developer',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Enable the ability to reset customizations to the active theme.', 'sitecore' ),
+					'description' => __( 'Enable the ability to reset customizations to the active theme.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			],
 			[
 				'id'       => 'disable_site_health',
-				'title'    => __( 'Disable Site Health', 'sitecore' ),
+				'title'    => __( 'Disable Site Health', 'ccdzine' ),
 				'callback' => [ $this, 'disable_site_health_callback' ],
 				'page'     => 'developer-tools',
-				'section'  => 'scp-options-developer',
+				'section'  => 'ccd-options-developer',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Disable WordPress\' site health feature.', 'sitecore' ),
+					'description' => __( 'Disable WordPress\' site health feature.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			],
 			[
 				'id'       => 'disable_floc',
-				'title'    => __( 'Disable FloC', 'sitecore' ),
+				'title'    => __( 'Disable FloC', 'ccdzine' ),
 				'callback' => [ $this, 'disable_floc_callback' ],
 				'page'     => 'developer-tools',
-				'section'  => 'scp-options-developer',
+				'section'  => 'ccd-options-developer',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Disable Google\'s next-generation tracking technology.', 'sitecore' ),
+					'description' => __( 'Disable Google\'s next-generation tracking technology.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			]
@@ -136,7 +136,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_direction_switch', $option );
+		return apply_filters( 'ccd_direction_switch', $option );
 	}
 
 	/**
@@ -154,7 +154,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_customizer_reset', $option );
+		return apply_filters( 'ccd_customizer_reset', $option );
 	}
 
 	/**
@@ -172,7 +172,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_disable_site_health', $option );
+		return apply_filters( 'ccd_disable_site_health', $option );
 	}
 
 	/**
@@ -190,7 +190,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_disable_floc', $option );
+		return apply_filters( 'ccd_disable_floc', $option );
 	}
 
 	/**
@@ -225,7 +225,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Adds a button in the user toolbar.', 'sitecore' )
+			__( 'Adds a button in the user toolbar.', 'ccdzine' )
 		);
 
 		echo $html;
@@ -263,7 +263,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Adds a button in the Customizer panel header.', 'sitecore' )
+			__( 'Adds a button in the Customizer panel header.', 'ccdzine' )
 		);
 
 		echo $html;
@@ -301,7 +301,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Removes the dashboard widget and the menu entry, disables site health notifications.', 'sitecore' )
+			__( 'Removes the dashboard widget and the menu entry, disables site health notifications.', 'ccdzine' )
 		);
 
 		echo $html;
@@ -339,7 +339,7 @@ class Settings_Fields_Developer extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Adds an http header to disable FLoC.', 'sitecore' )
+			__( 'Adds an http header to disable FLoC.', 'ccdzine' )
 		);
 
 		echo $html;

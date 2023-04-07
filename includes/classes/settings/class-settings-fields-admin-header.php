@@ -2,15 +2,15 @@
 /**
  * Admin header settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
-use function SiteCore\Core\platform_name;
+use function CCDzine\Core\platform_name;
 
 class Settings_Fields_Admin_Header extends Settings_Fields {
 
@@ -26,14 +26,14 @@ class Settings_Fields_Admin_Header extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'enable_custom_admin_header',
-				'title'    => __( 'Enable Custom Header', 'sitecore' ),
+				'title'    => __( 'Enable Custom Header', 'ccdzine' ),
 				'callback' => [ $this, 'enable_custom_admin_header_callback' ],
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-header',
+				'section'  => 'ccd-settings-section-admin-header',
 				'type'     => 'checkbox',
 				'args'     => [
 					'description' => sprintf(
-						__( 'Check to enable the custom header on admin screens.', 'sitecore' )
+						__( 'Check to enable the custom header on admin screens.', 'ccdzine' )
 					),
 					'class'       => 'admin-field'
 				]
@@ -71,7 +71,7 @@ class Settings_Fields_Admin_Header extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_enable_custom_admin_header', $option );
+		return apply_filters( 'ccd_enable_custom_admin_header', $option );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Settings_Fields_Admin_Header extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Adds the site title, the tagline/description, logo, and registers a navigation menu.', 'sitecore' )
+			__( 'Adds the site title, the tagline/description, logo, and registers a navigation menu.', 'ccdzine' )
 		);
 
 		echo $html;

@@ -2,13 +2,13 @@
 /**
  * Admin footer
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Admin
  * @category   Footer
  * @since      1.0.0
  */
 
-namespace SiteCore\Admin_Footer;
+namespace CCDzine\Admin_Footer;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,10 +66,10 @@ function plugin_credit() {
 	$html = sprintf(
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 		get_bloginfo( 'name' ),
-		esc_html__( 'is managed by the', 'sitecore' ),
-		esc_url( SCP_PLUGIN_URL ),
-		esc_html( SCP_NAME ),
-		esc_html__( 'plugin', 'sitecore' )
+		esc_html__( 'is managed by the', 'ccdzine' ),
+		esc_url( CCD_PLUGIN_URL ),
+		esc_html( CCD_NAME ),
+		esc_html__( 'plugin', 'ccdzine' )
 	);
 	return $html;
 }
@@ -85,9 +85,9 @@ function dev_website() {
 	$html = sprintf(
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 		get_bloginfo( 'name' ),
-		esc_html__( 'website was designed & developed by', 'sitecore' ),
-		esc_url( SCP_DEV_URL ),
-		esc_html( SCP_DEV_NAME )
+		esc_html__( 'website was designed & developed by', 'ccdzine' ),
+		esc_url( CCD_DEV_URL ),
+		esc_html( CCD_DEV_NAME )
 	);
 	return $html;
 }
@@ -102,11 +102,11 @@ function dev_email() {
 
 	$html = sprintf(
 		'%s %s %s <a href="mailto:%s">%s</a>',
-		esc_html__( 'Contact', 'sitecore' ),
-		esc_html( SCP_DEV_NAME ),
-		esc_html__( 'for website assistance:', 'sitecore' ),
-		esc_html( SCP_DEV_EMAIL ),
-		esc_html( SCP_DEV_EMAIL )
+		esc_html__( 'Contact', 'ccdzine' ),
+		esc_html( CCD_DEV_NAME ),
+		esc_html__( 'for website assistance:', 'ccdzine' ),
+		esc_html( CCD_DEV_EMAIL ),
+		esc_html( CCD_DEV_EMAIL )
 	);
 	return $html;
 }

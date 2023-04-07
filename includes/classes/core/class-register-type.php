@@ -2,13 +2,13 @@
 /**
  * Base class to register a post type
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -209,9 +209,9 @@ class Register_Type {
 	protected function options() {
 
 		$options = [
-			'label'                 => __( ucwords( $this->type_labels['plural'] ), 'sitecore' ),
+			'label'                 => __( ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
 			'labels'                => $this->labels(),
-			'description'           => __( ucfirst( $this->type_labels['description'] ), 'sitecore' ),
+			'description'           => __( ucfirst( $this->type_labels['description'] ), 'ccdzine' ),
 			'public'                => $this->type_options['public'],
 			'hierarchical'          => $this->type_options['hierarchical'],
 			'exclude_from_search'   => $this->type_options['exclude_from_search'],
@@ -259,31 +259,31 @@ class Register_Type {
 	protected function labels() {
 
 		$labels = [
-			'name'                  => __( ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'singular_name'         => __( ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'menu_name'             => __( ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'all_items'             => __( 'All ' . ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'add_new'               => __( 'Add New', 'sitecore' ),
-			'add_new_item'          => __( 'Add New ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'edit_item'             => __( 'Edit ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'new_item'              => __( 'New ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'view_item'             => __( 'View ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'view_items'            => __( 'View ' . ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'search_items'          => __( 'Search ' . ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'not_found'             => __( 'No ' . ucwords( $this->type_labels['plural'] ) . ' Found', 'sitecore' ),
-			'not_found_in_trash'    => __( 'No ' . ucwords( $this->type_labels['plural'] ) . ' Found in Trash', 'sitecore' ),
-			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'featured_image'        => __( 'Featured image for this ' . strtolower( $this->type_labels['singular'] ), 'sitecore' ),
-			'set_featured_image'    => __( 'Set featured image for this ' . strtolower( $this->type_labels['singular'] ), 'sitecore' ),
-			'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( $this->type_labels['singular'] ), 'sitecore' ),
-			'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( $this->type_labels['singular'] ), 'sitecore' ),
-			'archives'              => __( ucwords( $this->type_labels['singular'] ) . ' archives', 'sitecore' ),
-			'insert_into_item'      => __( 'Insert into ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( $this->type_labels['singular'] ), 'sitecore' ),
-			'filter_items_list'     => __( 'Filter ' . ucwords( $this->type_labels['plural'] ), 'sitecore' ),
-			'items_list_navigation' => __( ucwords( $this->type_labels['plural'] ) . ' list navigation', 'sitecore' ),
-			'items_list'            => __( ucwords( $this->type_labels['plural'] ) . ' List', 'sitecore' ),
-			'attributes'            => __( ucwords( $this->type_labels['singular'] ) . ' Attributes', 'sitecore' )
+			'name'                  => __( ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'singular_name'         => __( ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'menu_name'             => __( ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'all_items'             => __( 'All ' . ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'add_new'               => __( 'Add New', 'ccdzine' ),
+			'add_new_item'          => __( 'Add New ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'edit_item'             => __( 'Edit ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'new_item'              => __( 'New ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'view_item'             => __( 'View ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'view_items'            => __( 'View ' . ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'search_items'          => __( 'Search ' . ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'not_found'             => __( 'No ' . ucwords( $this->type_labels['plural'] ) . ' Found', 'ccdzine' ),
+			'not_found_in_trash'    => __( 'No ' . ucwords( $this->type_labels['plural'] ) . ' Found in Trash', 'ccdzine' ),
+			'parent_item_colon'     => __( 'Parent ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'featured_image'        => __( 'Featured image for this ' . strtolower( $this->type_labels['singular'] ), 'ccdzine' ),
+			'set_featured_image'    => __( 'Set featured image for this ' . strtolower( $this->type_labels['singular'] ), 'ccdzine' ),
+			'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( $this->type_labels['singular'] ), 'ccdzine' ),
+			'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( $this->type_labels['singular'] ), 'ccdzine' ),
+			'archives'              => __( ucwords( $this->type_labels['singular'] ) . ' archives', 'ccdzine' ),
+			'insert_into_item'      => __( 'Insert into ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( $this->type_labels['singular'] ), 'ccdzine' ),
+			'filter_items_list'     => __( 'Filter ' . ucwords( $this->type_labels['plural'] ), 'ccdzine' ),
+			'items_list_navigation' => __( ucwords( $this->type_labels['plural'] ) . ' list navigation', 'ccdzine' ),
+			'items_list'            => __( ucwords( $this->type_labels['plural'] ) . ' List', 'ccdzine' ),
+			'attributes'            => __( ucwords( $this->type_labels['singular'] ) . ' Attributes', 'ccdzine' )
 		];
 
 		return $labels;
@@ -427,10 +427,10 @@ class Register_Type {
 			$title = sprintf(
 				'%s %s',
 				ucwords( $this->type_labels['singular'] ),
-				__( 'Summary', 'sitecore' )
+				__( 'Summary', 'ccdzine' )
 			);
 		}
-		return apply_filters( 'scp_excerpt_metabox_title', $title );
+		return apply_filters( 'ccd_excerpt_metabox_title', $title );
 	}
 
 	/**
@@ -445,9 +445,9 @@ class Register_Type {
 		if ( $this->type_labels['excerpt_mb']['description'] ) {
 			$description = $this->type_labels['excerpt_mb']['description'];
 		} else {
-			$description = __( 'Add a brief summary of this content to be used in archive pages, depending upon the active theme, and to be used in search engine metadata and for display in social media embeds.', 'sitecore' );
+			$description = __( 'Add a brief summary of this content to be used in archive pages, depending upon the active theme, and to be used in search engine metadata and for display in social media embeds.', 'ccdzine' );
 		}
-		return apply_filters( 'scp_excerpt_metabox_description', $description );
+		return apply_filters( 'ccd_excerpt_metabox_description', $description );
 	}
 
 	/**

@@ -2,13 +2,13 @@
 /**
  * Content settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Fields_Content_Posts extends Settings_Fields {
 
@@ -24,61 +24,61 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'posts_to_news',
-				'title'    => __( 'Change Posts to News', 'sitecore' ),
+				'title'    => __( 'Change Posts to News', 'ccdzine' ),
 				'callback' => [ $this, 'posts_to_news_callback' ],
 				'page'     => 'content-settings',
-				'section'  => 'scp-settings-content-posts',
+				'section'  => 'ccd-settings-content-posts',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to change blog posts to news posts.', 'sitecore' ),
+					'description' => __( 'Check to change blog posts to news posts.', 'ccdzine' ),
 					'class'       => 'content-field'
 				]
 			],
 			[
 				'id'       => 'remove_blog',
-				'title'    => __( 'Remove Blog', 'sitecore' ),
+				'title'    => __( 'Remove Blog', 'ccdzine' ),
 				'callback' => [ $this, 'remove_blog_callback' ],
 				'page'     => 'content-settings',
-				'section'  => 'scp-settings-content-posts',
+				'section'  => 'ccd-settings-content-posts',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to entirely remove the blogging feature and associated content or widgets.', 'sitecore' ),
+					'description' => __( 'Check to entirely remove the blogging feature and associated content or widgets.', 'ccdzine' ),
 					'class'       => 'content-field'
 				]
 			],
 			[
 				'id'       => 'type_tax_sort_order',
-				'title'    => __( 'Post Types & Taxonomies Sort Order', 'sitecore' ),
+				'title'    => __( 'Post Types & Taxonomies Sort Order', 'ccdzine' ),
 				'callback' => [ $this, 'type_tax_sort_order_callback' ],
 				'page'     => 'content-settings',
-				'section'  => 'scp-settings-content-posts',
+				'section'  => 'ccd-settings-content-posts',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to enable drag & drop sort order of post types and taxonomies.', 'sitecore' ),
+					'description' => __( 'Check to enable drag & drop sort order of post types and taxonomies.', 'ccdzine' ),
 					'class'       => 'content-field'
 				]
 			],
 						[
 				'id'       => 'disable_block_widgets',
-				'title'    => __( 'Disable Block Widgets', 'sitecore' ),
+				'title'    => __( 'Disable Block Widgets', 'ccdzine' ),
 				'callback' => [ $this, 'disable_block_widgets_callback' ],
 				'page'     => 'content-settings',
-				'section'  => 'scp-settings-content-posts',
+				'section'  => 'ccd-settings-content-posts',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to disable block widgets in favor of classic widgets.', 'sitecore' ),
+					'description' => __( 'Check to disable block widgets in favor of classic widgets.', 'ccdzine' ),
 					'class'       => 'content-field'
 				]
 			],
 			[
 				'id'       => 'enable_link_manager',
-				'title'    => __( 'Enable Classic Links', 'sitecore' ),
+				'title'    => __( 'Enable Classic Links', 'ccdzine' ),
 				'callback' => [ $this, 'enable_link_manager_callback' ],
 				'page'     => 'content-settings',
-				'section'  => 'scp-settings-content-posts',
+				'section'  => 'ccd-settings-content-posts',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to enable the link manager and links widget.', 'sitecore' ),
+					'description' => __( 'Check to enable the link manager and links widget.', 'ccdzine' ),
 					'class'       => 'content-field'
 				]
 			]
@@ -159,7 +159,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_posts_to_news', $option );
+		return apply_filters( 'ccd_posts_to_news', $option );
 	}
 
 	/**
@@ -177,7 +177,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_remove_blog', $option );
+		return apply_filters( 'ccd_remove_blog', $option );
 	}
 
 	/**
@@ -195,7 +195,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_type_tax_sort_order', $option );
+		return apply_filters( 'ccd_type_tax_sort_order', $option );
 	}
 
 	/**
@@ -213,7 +213,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_disable_block_widgets', $option );
+		return apply_filters( 'ccd_disable_block_widgets', $option );
 	}
 
 	/**
@@ -231,7 +231,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_enable_link_manager', $option );
+		return apply_filters( 'ccd_enable_link_manager', $option );
 	}
 
 	/**
@@ -402,7 +402,7 @@ class Settings_Fields_Content_Posts extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s <a href="%s" target="_blank" rel="nofollow noindex">%s</a></p>',
-			__( 'More information at', 'sitecore' ),
+			__( 'More information at', 'ccdzine' ),
 			esc_url( 'https://codex.wordpress.org/Links_Manager' ),
 			'https://codex.wordpress.org/Links_Manager'
 		);

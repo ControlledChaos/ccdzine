@@ -2,15 +2,15 @@
 /**
  * Add page class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
-use SiteCore\Compatibility as Compat;
+use CCDzine\Compatibility as Compat;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -307,7 +307,7 @@ class Add_Page {
 	 * @return string Returns the text of the button.
 	 */
 	protected function acf_update_button() {
-		return apply_filters( 'scp_acf_update_button', __( 'Update Page', 'sitecore' ) );
+		return apply_filters( 'ccd_acf_update_button', __( 'Update Page', 'ccdzine' ) );
 	}
 
 	/**
@@ -318,7 +318,7 @@ class Add_Page {
 	 * @return string Returns the text of the message.
 	 */
 	protected function acf_update_message() {
-		return apply_filters( 'scp_acf_update_message', __( 'Page Updated', 'sitecore' ) );
+		return apply_filters( 'ccd_acf_update_message', __( 'Page Updated', 'ccdzine' ) );
 	}
 
 	/**
@@ -381,7 +381,7 @@ class Add_Page {
 		if ( $this->page_labels['submit_label'] ) {
 			$label = $this->page_labels['submit_label'];
 		} else {
-			$label = __( 'Save Settings', 'sitecore' );
+			$label = __( 'Save Settings', 'ccdzine' );
 		}
 
 		$html = submit_button(
@@ -706,7 +706,7 @@ class Add_Page {
 	 * Page content
 	 *
 	 * This can be used in the default `content_callback()` method.
-	 * Hooking into `scp_submenu_page_content` adds
+	 * Hooking into `ccd_submenu_page_content` adds
 	 * content/markup inside the standard page markup.
 	 * Use a new `content_callback()` method to override these defaults.
 	 *
@@ -718,7 +718,7 @@ class Add_Page {
 
 		$content = do_action( 'render_screen_tabs_' . $this->page_options['menu_slug'] );
 
-		return apply_filters( 'scp_admin_page_content_' . $this->page_options['menu_slug'], $content );
+		return apply_filters( 'ccd_admin_page_content_' . $this->page_options['menu_slug'], $content );
 	}
 
 	/**
@@ -747,7 +747,7 @@ class Add_Page {
 		// Print a heading using the menu title variable.
 		echo  sprintf(
 			'<h1>%s</h1>',
-			__( $this->heading(), 'sitecore' )
+			__( $this->heading(), 'ccdzine' )
 		);
 
 		// Print a paragraph with native description class using the description variable.
@@ -780,7 +780,7 @@ class Add_Page {
 		// More information tab.
 		$screen->add_help_tab( [
 			'id'       => 'more_info',
-			'title'    => __( 'More Information', 'sitecore' ),
+			'title'    => __( 'More Information', 'ccdzine' ),
 			'content'  => null,
 			'callback' => [ $this, 'more_info' ]
 		] );
@@ -799,7 +799,7 @@ class Add_Page {
 	 * @return void
 	 */
 	public function more_info() {
-		include_once SCP_PATH . 'views/backend/help/sample-more-info.php';
+		include_once CCD_PATH . 'views/backend/help/sample-more-info.php';
 	}
 
 	/**
@@ -818,7 +818,7 @@ class Add_Page {
 
 		ob_start();
 
-		include_once SCP_PATH . 'views/backend/help/sample-sidebar.php';
+		include_once CCD_PATH . 'views/backend/help/sample-sidebar.php';
 
 		$html = ob_get_clean();
 

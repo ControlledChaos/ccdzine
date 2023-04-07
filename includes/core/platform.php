@@ -2,13 +2,13 @@
 /**
  * Platform functions
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Core;
+namespace CCDzine\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -56,7 +56,7 @@ function platform_name() {
 		$name = 'ClassicPress';
 	}
 
-	return apply_filters( 'scp_platform_name', $name );
+	return apply_filters( 'ccd_platform_name', $name );
 }
 
 /**

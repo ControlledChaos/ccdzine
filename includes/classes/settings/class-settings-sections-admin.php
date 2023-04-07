@@ -2,13 +2,13 @@
 /**
  * Sample settings sections
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Sections_Admin extends Settings_Sections {
 
@@ -23,8 +23,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 
 		$sections = [
 			[
-				'id'       => 'scp-settings-section-admin-menu',
-				'title'    => __( 'Menu Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-menu',
+				'title'    => __( 'Menu Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [
@@ -34,8 +34,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 				]
 			],
 			[
-				'id'       => 'scp-settings-section-admin-dashboard',
-				'title'    => __( 'Dashboard Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-dashboard',
+				'title'    => __( 'Dashboard Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [
@@ -45,8 +45,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 				]
 			],
 			[
-				'id'       => 'scp-settings-section-admin-toolbar',
-				'title'    => __( 'Toolbar Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-toolbar',
+				'title'    => __( 'Toolbar Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [
@@ -56,8 +56,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 				]
 			],
 			[
-				'id'       => 'scp-settings-section-admin-header',
-				'title'    => __( 'Header Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-header',
+				'title'    => __( 'Header Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [
@@ -66,8 +66,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 					'section_class'  => 'settings-section-admin-header'
 				]
 			],[
-				'id'       => 'scp-settings-section-admin-header',
-				'title'    => __( 'header Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-header',
+				'title'    => __( 'header Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [
@@ -77,8 +77,8 @@ class Settings_Sections_Admin extends Settings_Sections {
 				]
 			],
 			[
-				'id'       => 'scp-settings-section-admin-users',
-				'title'    => __( 'User Settings', 'sitecore' ),
+				'id'       => 'ccd-settings-section-admin-users',
+				'title'    => __( 'User Settings', 'ccdzine' ),
 				'callback' => '',
 				'page'     => 'options-admin',
 				'args'     => [

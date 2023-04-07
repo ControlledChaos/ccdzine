@@ -2,15 +2,15 @@
 /**
  * Admin dashboard settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
-use function SiteCore\Core\platform_name;
+use function CCDzine\Core\platform_name;
 
 class Settings_Fields_Admin_Dashboard extends Settings_Fields {
 
@@ -26,12 +26,12 @@ class Settings_Fields_Admin_Dashboard extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'enable_custom_dashboard',
-				'title'    => __( 'Custom Dashboard', 'sitecore' ),
+				'title'    => __( 'Custom Dashboard', 'ccdzine' ),
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-dashboard',
+				'section'  => 'ccd-settings-section-admin-dashboard',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Check to replace the default dashboard with a custom dashboard for this website.', 'sitecore' ),
+					'description' => __( 'Check to replace the default dashboard with a custom dashboard for this website.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			]
@@ -68,7 +68,7 @@ class Settings_Fields_Admin_Dashboard extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_enable_custom_dashboard', $option );
+		return apply_filters( 'ccd_enable_custom_dashboard', $option );
 	}
 
 	/**

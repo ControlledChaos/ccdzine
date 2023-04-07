@@ -2,15 +2,15 @@
 /**
  * Admin toolbar settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
-use function SiteCore\Core\platform_name;
+use function CCDzine\Core\platform_name;
 
 class Settings_Fields_Admin_Toolbar extends Settings_Fields {
 
@@ -27,17 +27,17 @@ class Settings_Fields_Admin_Toolbar extends Settings_Fields {
 			[
 				'id'       => 'toolbar_remove_platform_link',
 				'title'    => sprintf(
-					__( '%s Link', 'sitecore' ),
+					__( '%s Link', 'ccdzine' ),
 					platform_name()
 
 				),
 				'callback' => [ $this, 'toolbar_remove_platform_link_callback' ],
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-toolbar',
+				'section'  => 'ccd-settings-section-admin-toolbar',
 				'type'     => 'checkbox',
 				'args'     => [
 					'description' => sprintf(
-						__( 'Check to remove the %s logo link.', 'sitecore' ),
+						__( 'Check to remove the %s logo link.', 'ccdzine' ),
 						platform_name()
 					),
 					'class'       => 'admin-field'
@@ -76,7 +76,7 @@ class Settings_Fields_Admin_Toolbar extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_toolbar_remove_platform_link', $option );
+		return apply_filters( 'ccd_toolbar_remove_platform_link', $option );
 	}
 
 	/**

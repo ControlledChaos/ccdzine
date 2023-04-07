@@ -5,16 +5,16 @@
  * Extend this class to load a plugin and
  * add related filters & actions.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace CCDzine\Classes\Vendor;
 
 // Alias namespaces.
-use SiteCore as SiteCore;
+use CCDzine as CCDzine;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Plugin {
 
 	// Define path to the vendor directory for bundled plugins.
-	CONST SCP_VENDOR_PATH = SCP_PATH . 'includes/vendor/';
+	CONST CCD_VENDOR_PATH = CCD_PATH . 'includes/vendor/';
 
 	/**
 	 * Plugin paths
@@ -116,7 +116,7 @@ class Plugin {
 		 * method will return true by default.
 		 * Define a unique constant in a child class.
 		 */
-		if ( defined( 'SCP_USE_THIS_PLUGIN' ) && false == SCP_USE_THIS_PLUGIN ) {
+		if ( defined( 'CCD_USE_THIS_PLUGIN' ) && false == CCD_USE_THIS_PLUGIN ) {
 			return false;
 		}
 		return true;
@@ -138,7 +138,7 @@ class Plugin {
 		$file = $this->plugin_paths['bundled_file'];
 
 		// Return the path to the core plugin file.
-		return self :: SCP_VENDOR_PATH . $dir . '/' . $file;
+		return self :: CCD_VENDOR_PATH . $dir . '/' . $file;
 	}
 
 	/**
@@ -170,7 +170,7 @@ class Plugin {
 		) {
 			$path = WP_PLUGIN_DIR . '/' . $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_upgrade_path', $path );
+		return apply_filters( 'ccd_plugin_upgrade_path', $path );
 	}
 
 	/**
@@ -195,7 +195,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_basic_basename', $basename );
+		return apply_filters( 'ccd_plugin_basic_basename', $basename );
 	}
 
 	/**
@@ -220,7 +220,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_upgrade_basename', $basename );
+		return apply_filters( 'ccd_plugin_upgrade_basename', $basename );
 	}
 
 	/**
@@ -285,7 +285,7 @@ class Plugin {
 		if ( false == $this->allow_installed ) {
 			$allow = false;
 		}
-		return apply_filters( 'scp_plugin_allow_installed', $allow );
+		return apply_filters( 'ccd_plugin_allow_installed', $allow );
 	}
 
 	/**
@@ -304,7 +304,7 @@ class Plugin {
 		if ( false == $this->allow_upgrade ) {
 			$allow = false;
 		}
-		return apply_filters( 'scp_plugin_allow_upgrade', $allow );
+		return apply_filters( 'ccd_plugin_allow_upgrade', $allow );
 	}
 
 	/**
@@ -414,9 +414,9 @@ class Plugin {
 				<div class="update-message notice inline notice-error notice-alt">
 					<?php echo sprintf(
 						'<p>%s %s %s</p>',
-						__( 'This plugin is not allowed by the', 'sitecore' ),
-						SCP_NAME,
-						__( 'plugin to be activated.', 'sitecore' )
+						__( 'This plugin is not allowed by the', 'ccdzine' ),
+						CCD_NAME,
+						__( 'plugin to be activated.', 'ccdzine' )
 					); ?>
 				</div>
 			</td>

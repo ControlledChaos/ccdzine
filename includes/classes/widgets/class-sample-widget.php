@@ -2,13 +2,13 @@
 /**
  * Sample widget type
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Widgets
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Widgets;
+namespace CCDzine\Classes\Widgets;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

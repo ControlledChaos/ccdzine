@@ -2,17 +2,17 @@
 /**
  * Admin screens
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Admin
  * @category   General
  * @since      1.0.0
  */
 
-namespace SiteCore\Admin;
+namespace CCDzine\Admin;
 
-use SiteCore\Classes as Classes,
-	SiteCore\Compatibility  as Compat,
-	SiteCore\Classes\Vendor as Vendor;
+use CCDzine\Classes as Classes,
+	CCDzine\Compatibility  as Compat,
+	CCDzine\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -68,7 +68,7 @@ function setup() {
 	if ( get_option( 'disable_site_health', false ) ) {
 		add_action( 'admin_menu', $ns( 'menu_remove_site_health' ) );
 	}
-	if ( defined( 'SCP_DISABLE_SITE_HEALTH' ) && SCP_DISABLE_SITE_HEALTH ) {
+	if ( defined( 'CCD_DISABLE_SITE_HEALTH' ) && CCD_DISABLE_SITE_HEALTH ) {
 		add_action( 'admin_menu', $ns( 'menu_remove_site_health' ) );
 	}
 
@@ -207,7 +207,7 @@ function menu_order( $order ) {
 		'edit-comments.php',
 		'separator2'
 	];
-	return apply_filters( 'scp_admin_menu_order', $order );
+	return apply_filters( 'ccd_admin_menu_order', $order );
 }
 
 /**
@@ -278,8 +278,8 @@ function menus_widgets() {
 
 		if ( get_option( 'admin_menu_menus_top', true ) ) {
 			add_menu_page(
-				__( 'Navigation Menus', 'sitecore' ),
-				__( 'Navigation', 'sitecore' ),
+				__( 'Navigation Menus', 'ccdzine' ),
+				__( 'Navigation', 'ccdzine' ),
 				'delete_others_pages',
 				'nav-menus.php',
 				'',
@@ -294,8 +294,8 @@ function menus_widgets() {
 
 		if ( get_option( 'admin_menu_widgets_top', true ) ) {
 			add_menu_page(
-				__( 'Widgets', 'sitecore' ),
-				__( 'Widgets', 'sitecore' ),
+				__( 'Widgets', 'ccdzine' ),
+				__( 'Widgets', 'ccdzine' ),
 				'delete_others_pages',
 				'widgets.php',
 				'',
@@ -373,7 +373,7 @@ function hide_policy_content_notice() {
  */
 function admin_header_menu() {
 	register_nav_menus( [
-		'admin_header' => __( 'Admin Header Menu', 'sitecore' )
+		'admin_header' => __( 'Admin Header Menu', 'ccdzine' )
 	] );
 }
 
@@ -384,7 +384,7 @@ function admin_header_menu() {
  * @return void
  */
 function admin_header() {
-	include_once SCP_PATH . 'views/backend/header/admin-header.php';
+	include_once CCD_PATH . 'views/backend/header/admin-header.php';
 }
 
 /**
@@ -494,7 +494,7 @@ function admin_enqueue_scripts() {
 	 * child classes of the `Add_Page` class. This creates tabbed
 	 * content on admin pages, settings pages, & the dashboard.
 	 */
-	wp_enqueue_script( 'scp-tabs', SCP_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
+	wp_enqueue_script( 'ccd-tabs', CCD_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
 }
 
 /**
@@ -522,7 +522,7 @@ function admin_enqueue_styles() {
 	 *
 	 * @since 1.0.0
 	 */
-	wp_enqueue_style( 'scp-admin', SCP_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
+	wp_enqueue_style( 'ccd-admin', CCD_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
 
 	/**
 	 * Enqueue admin tabs styles
@@ -531,5 +531,5 @@ function admin_enqueue_styles() {
 	 * child classes of the `Add_Page` class. This creates tabbed
 	 * content on admin pages, settings pages, & the dashboard.
 	 */
-	wp_enqueue_style( 'scp-tabs', SCP_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
+	wp_enqueue_style( 'ccd-tabs', CCD_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
 }

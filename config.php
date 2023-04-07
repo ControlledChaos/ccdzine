@@ -11,16 +11,16 @@
  * in a settings file is to prevent site administrators wrongly
  * or incorrectly configuring the site built by developers.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Configuration
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace CCDzine;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes;
+use CCDzine\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The minimum required PHP version.
  */
-define( 'SCP_MIN_PHP_VERSION', '7.4' );
+define( 'CCD_MIN_PHP_VERSION', '7.4' );
 
 /**
  * Function: Minimum PHP version
@@ -46,7 +46,7 @@ define( 'SCP_MIN_PHP_VERSION', '7.4' );
  */
 function min_php_version() {
 
-	if ( version_compare( phpversion(), SCP_MIN_PHP_VERSION, '<' ) ) {
+	if ( version_compare( phpversion(), CCD_MIN_PHP_VERSION, '<' ) ) {
 		return false;
 	}
 	return true;
@@ -63,7 +63,7 @@ function min_php_version() {
  * @since 1.0.0
  * @var   string The latest plugin version.
  */
-define( 'SCP_VERSION', '1.0.0' );
+define( 'CCD_VERSION', '1.0.0' );
 
 /**
  * Plugin name
@@ -71,8 +71,8 @@ define( 'SCP_VERSION', '1.0.0' );
  * @since 1.0.0
  * @var   string The name of the plugin.
  */
-if ( ! defined( 'SCP_NAME' ) ) {
-	define( 'SCP_NAME', __( 'Site Core', 'sitecore' ) );
+if ( ! defined( 'CCD_NAME' ) ) {
+	define( 'CCD_NAME', __( 'CCDzine', 'ccdzine' ) );
 }
 
 /**
@@ -82,7 +82,7 @@ if ( ! defined( 'SCP_NAME' ) ) {
  * @var   string The filesystem directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'CCD_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Constant: Plugin folder URL
@@ -91,7 +91,7 @@ define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
  * @var   string The URL directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_URL', plugin_dir_url( __FILE__ ) );
+define( 'CCD_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * PHP version check
@@ -113,9 +113,9 @@ if ( ! min_php_version() ) {
  * @since 1.0.0
  * @var   array Plugin identification, support, settings.
  */
-if ( ! defined( 'SCP_CONFIG' ) ) {
+if ( ! defined( 'CCD_CONFIG' ) ) {
 
-	define( 'SCP_CONFIG', [
+	define( 'CCD_CONFIG', [
 
 		/**
 		 * Plugin name
@@ -125,7 +125,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the plugin.
 		 */
-		'name' => SCP_NAME,
+		'name' => CCD_NAME,
 
 		/**
 		 * Developer name
@@ -133,7 +133,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the developer/agency.
 		 */
-		'dev_name' => __( 'Controlled Chaos', 'sitecore' ),
+		'dev_name' => __( 'Controlled Chaos', 'ccdzine' ),
 
 		/**
 		 * Developer URL
@@ -157,7 +157,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The URL of the plugin.
 		 */
-		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/sitecore' ),
+		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/ccdzine' ),
 
 		/**
 		 * Allow Site Health
@@ -191,8 +191,8 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
  * @since 1.0.0
  * @var   string The name of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_NAME' ) ) {
-	define( 'SCP_DEV_NAME', SCP_CONFIG['dev_name'] );
+if ( ! defined( 'CCD_DEV_NAME' ) ) {
+	define( 'CCD_DEV_NAME', CCD_CONFIG['dev_name'] );
 }
 
 /**
@@ -201,8 +201,8 @@ if ( ! defined( 'SCP_DEV_NAME' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_URL' ) ) {
-	define( 'SCP_DEV_URL', SCP_CONFIG['dev_url'] );
+if ( ! defined( 'CCD_DEV_URL' ) ) {
+	define( 'CCD_DEV_URL', CCD_CONFIG['dev_url'] );
 }
 
 /**
@@ -211,8 +211,8 @@ if ( ! defined( 'SCP_DEV_URL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
-	define( 'SCP_DEV_EMAIL', SCP_CONFIG['dev_email'] );
+if ( ! defined( 'CCD_DEV_EMAIL' ) ) {
+	define( 'CCD_DEV_EMAIL', CCD_CONFIG['dev_email'] );
 }
 
 /**
@@ -221,8 +221,8 @@ if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the plugin.
  */
-if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
-	define( 'SCP_PLUGIN_URL', SCP_CONFIG['plugin_url'] );
+if ( ! defined( 'CCD_PLUGIN_URL' ) ) {
+	define( 'CCD_PLUGIN_URL', CCD_CONFIG['plugin_url'] );
 }
 
 /**
@@ -231,8 +231,8 @@ if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Site Health feature.
  */
-if ( ! defined( 'SCP_DISABLE_SITE_HEALTH' ) ) {
-	define( 'SCP_DISABLE_SITE_HEALTH', SCP_CONFIG['site_health'] );
+if ( ! defined( 'CCD_DISABLE_SITE_HEALTH' ) ) {
+	define( 'CCD_DISABLE_SITE_HEALTH', CCD_CONFIG['site_health'] );
 }
 
 /**
@@ -241,8 +241,8 @@ if ( ! defined( 'SCP_DISABLE_SITE_HEALTH' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Customizer.
  */
-if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
-	define( 'SCP_ALLOW_CUSTOMIZER', SCP_CONFIG['customizer'] );
+if ( ! defined( 'CCD_ALLOW_CUSTOMIZER' ) ) {
+	define( 'CCD_ALLOW_CUSTOMIZER', CCD_CONFIG['customizer'] );
 }
 
 /**
@@ -251,6 +251,6 @@ if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow admin color pickers.
  */
-if ( ! defined( 'SCP_ALLOW_ADMIN_COLOR_PICKER' ) ) {
-	define( 'SCP_ALLOW_ADMIN_COLOR_PICKER', SCP_CONFIG['color_picker'] );
+if ( ! defined( 'CCD_ALLOW_ADMIN_COLOR_PICKER' ) ) {
+	define( 'CCD_ALLOW_ADMIN_COLOR_PICKER', CCD_CONFIG['color_picker'] );
 }

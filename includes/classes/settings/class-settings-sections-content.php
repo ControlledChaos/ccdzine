@@ -2,13 +2,13 @@
 /**
  * Content settings sections
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Sections_Content extends Settings_Sections {
 
@@ -23,7 +23,7 @@ class Settings_Sections_Content extends Settings_Sections {
 
 		$sections = [
 			[
-				'id'       => 'scp-settings-content-posts',
+				'id'       => 'ccd-settings-content-posts',
 				'title'    => null,
 				'callback' => [ $this, 'callback' ],
 				'page'     => 'content-settings',
@@ -53,9 +53,9 @@ class Settings_Sections_Content extends Settings_Sections {
 
 		$html = sprintf(
 			'<p>%s</p>',
-			__( 'Choose options for the blog and widgets.', 'sitecore' )
+			__( 'Choose options for the blog and widgets.', 'ccdzine' )
 		);
 
-		echo apply_filters( 'scp_content_settings_callback', $html );
+		echo apply_filters( 'ccd_content_settings_callback', $html );
 	}
 }

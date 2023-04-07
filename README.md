@@ -1,6 +1,6 @@
-# Site Core
+# CCDzine
 
-Develop site-specific plugins for ClassicPress and WordPres.
+Site-specific plugin for the Controlled Chaos Design website.
 
 ![Minimum PHP version 7.4](https://img.shields.io/badge/PHP_minimum-7.4-8892bf.svg?style=flat-square)
 ![Tested on PHP version 8.0](https://img.shields.io/badge/PHP_tested-8.0-8892bf.svg?style=flat-square)
@@ -8,7 +8,7 @@ Develop site-specific plugins for ClassicPress and WordPres.
 ![WordPress tested on version 6.1.1](https://img.shields.io/badge/WordPress_tested-6.1.1-2271b1.svg?style=flat-square)
 ![ACF Ready](https://img.shields.io/badge/ACF-Ready-00d3ae.svg?style=flat-square)
 
-![Site Core Plugin Cover Image](https://github.com/ControlledChaos/sitecore/raw/main/cover.jpg)
+![CCDzine Plugin Cover Image](https://github.com/ControlledChaos/ccdzine/raw/main/cover.jpg)
 
 ## Plugin Overview
 
@@ -96,26 +96,26 @@ Next change the information in the plugin header of the core plugin file and eit
 Following is a list of strings to find and replace in all plugin files.
 
 1. **Plugin name**
-   Find `Site Core` and replace with your plugin name.
+   Find `CCDzine` and replace with your plugin name.
 
 2. **Package**
-   Find `Site_Core` and replace with your plugin name, include underscores between words. This will change the package name
+   Find `CCDzine` and replace with your plugin name, include underscores between words. This will change the package name
    in file headers.
 
 3. **Namespace**
-   Find `SiteCore` and replace with something unique to your plugin name.
+   Find `CCDzine` and replace with something unique to your plugin name.
 
 4. **Text domain**
-   Find `sitecore` and replace with the new name of your primary plugin file (this file). It is standard to match the domain with the file name but this is not required to run the code.
+   Find `ccdzine` and replace with the new name of your primary plugin file (this file). It is standard to match the domain with the file name but this is not required to run the code.
 
 5. **Admin page slug**
-   Find `site-core` and replace with the new base slug of your plugin's admin pages.
+   Find `ccdzine` and replace with the new base slug of your plugin's admin pages.
 
 6. **Constants prefix**
-   Find `SCP` and replace with something unique to your plugin name. Use only uppercase letters.
+   Find `CCD` and replace with something unique to your plugin name. Use only uppercase letters.
 
 7. **General prefix**
-   Find `scp` and replace with something unique to your plugin name. Use only lowercase letters. This will change the prefix of all filters and settings, and the prefix of functions outside of a class.
+   Find `ccd` and replace with something unique to your plugin name. Use only lowercase letters. This will change the prefix of all filters and settings, and the prefix of functions outside of a class.
 
 8. **Constants**
    See the `includes/config.php` file to change developer/agency details, plugin name & URL, plus more personal or white-label constants.
@@ -126,9 +126,9 @@ Finally, remember to modify or remove any instructional information in admin pag
 
 ## License & Warranty
 
-Site Core is free software. It can be redistributed and/or modified ad libidum. There is no license distributed with this product.
+CCDzine is free software. It can be redistributed and/or modified ad libidum. There is no license distributed with this product.
 
-Site Core is distributed WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+CCDzine is distributed WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 This project is an exercise in true open source code without the inherent ownership implied by the issuance of a license, however non-restrictive the license is.
 

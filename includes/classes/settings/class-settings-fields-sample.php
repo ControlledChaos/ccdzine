@@ -2,13 +2,13 @@
 /**
  * Sample settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Fields_Sample extends Settings_Fields {
 
@@ -24,63 +24,63 @@ class Settings_Fields_Sample extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'sample_field_one',
-				'title'    => __( 'Sample Field #1', 'sitecore' ),
+				'title'    => __( 'Sample Field #1', 'ccdzine' ),
 				'callback' => [ $this, 'sample_field_one_callback' ],
 				'page'     => 'general',
-				'section'  => 'scp-settings-section-sample',
+				'section'  => 'ccd-settings-section-sample',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Sample field one description.', 'sitecore' ),
+					'description' => __( 'Sample field one description.', 'ccdzine' ),
 					'class'       => 'sample-field'
 				]
 			],
 			[
 				'id'       => 'sample_field_two',
-				'title'    => __( 'Sample Field #2', 'sitecore' ),
+				'title'    => __( 'Sample Field #2', 'ccdzine' ),
 				'callback' => [ $this, 'sample_field_two_callback' ],
 				'page'     => 'general',
-				'section'  => 'scp-settings-section-sample',
+				'section'  => 'ccd-settings-section-sample',
 				'type'     => 'radio',
 				'args'     => [
-					'description' => __( 'Sample field two description.', 'sitecore' ),
+					'description' => __( 'Sample field two description.', 'ccdzine' ),
 					'class'       => 'sample-field'
 				]
 			],
 			[
 				'id'       => 'sample_field_three',
-				'title'    => __( 'Sample Field #3', 'sitecore' ),
+				'title'    => __( 'Sample Field #3', 'ccdzine' ),
 				'callback' => [ $this, 'sample_field_three_callback' ],
 				'page'     => 'general',
-				'section'  => 'scp-settings-section-sample',
+				'section'  => 'ccd-settings-section-sample',
 				'type'     => 'select',
 				'args'     => [
-					'description' => __( 'Sample field three description.', 'sitecore' ),
+					'description' => __( 'Sample field three description.', 'ccdzine' ),
 					'label_for'   => 'sample_field_three',
 					'class'       => 'sample-field'
 				]
 			],
 			[
 				'id'       => 'sample_field_four',
-				'title'    => __( 'Sample Field #4', 'sitecore' ),
+				'title'    => __( 'Sample Field #4', 'ccdzine' ),
 				'callback' => [ $this, 'sample_field_four_callback' ],
 				'page'     => 'general',
-				'section'  => 'scp-settings-section-sample',
+				'section'  => 'ccd-settings-section-sample',
 				'type'     => 'text',
 				'args'     => [
-					'description' => __( 'Sample field four description.', 'sitecore' ),
+					'description' => __( 'Sample field four description.', 'ccdzine' ),
 					'label_for'   => 'sample_field_four',
 					'class'       => 'sample-field'
 				]
 			],
 			[
 				'id'       => 'sample_field_five',
-				'title'    => __( 'Sample Field #5', 'sitecore' ),
+				'title'    => __( 'Sample Field #5', 'ccdzine' ),
 				'callback' => [ $this, 'sample_field_five_callback' ],
 				'page'     => 'general',
-				'section'  => 'scp-settings-section-sample',
+				'section'  => 'ccd-settings-section-sample',
 				'type'     => 'textarea',
 				'args'     => [
-					'description' => __( 'Sample field five description.', 'sitecore' ),
+					'description' => __( 'Sample field five description.', 'ccdzine' ),
 					'label_for'   => 'sample_field_five',
 					'class'       => 'sample-field'
 				]
@@ -162,7 +162,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_sample_field_one', $option );
+		return apply_filters( 'ccd_sample_field_one', $option );
 	}
 
 	/**
@@ -174,7 +174,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 	 */
 	public function sample_field_two_sanitize() {
 		$option = get_option( 'sample_field_two' );
-		return apply_filters( 'scp_sample_field_two', $option );
+		return apply_filters( 'ccd_sample_field_two', $option );
 	}
 
 	/**
@@ -186,7 +186,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 	 */
 	public function sample_field_three_sanitize() {
 		$option = get_option( 'sample_field_three', [] );
-		return apply_filters( 'scp_sample_field_three', $option );
+		return apply_filters( 'ccd_sample_field_three', $option );
 	}
 
 	/**
@@ -198,7 +198,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 	 */
 	public function sample_field_four_sanitize() {
 		$option = wp_strip_all_tags( get_option( 'sample_field_four' ), false );
-		return apply_filters( 'scp_sample_field_four', $option );
+		return apply_filters( 'ccd_sample_field_four', $option );
 	}
 
 	/**
@@ -210,7 +210,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 	 */
 	public function sample_field_five_sanitize() {
 		$option = wp_strip_all_tags( get_option( 'sample_field_five' ), false );
-		return apply_filters( 'scp_sample_field_five', $option );
+		return apply_filters( 'ccd_sample_field_five', $option );
 	}
 
 	/**
@@ -286,7 +286,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 			$field_id,
 			$array,
 			checked( 'a', $option[ $array ], false ),
-			__( 'Option A', 'sitecore' )
+			__( 'Option A', 'ccdzine' )
 		);
 		$html .= '</label><br />';
 		$html .= sprintf(
@@ -299,7 +299,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 			$field_id,
 			$array,
 			checked( $default, $option[ $array ], false ),
-			__( 'Option B', 'sitecore' )
+			__( 'Option B', 'ccdzine' )
 		);
 		$html .= '</label>';
 		$html .= sprintf(
@@ -339,17 +339,17 @@ class Settings_Fields_Sample extends Settings_Fields {
 		);
 		$html .= sprintf(
 			'<option value="">%s</option>',
-			__( 'Choose your option&hellip;', 'sitecore' )
+			__( 'Choose your option&hellip;', 'ccdzine' )
 		);
 		$html .= sprintf(
 			'<option value="one" %s>%s</option>',
 			selected( $option[ $array ], 'one', false ),
-			__( 'Option One', 'sitecore' )
+			__( 'Option One', 'ccdzine' )
 		);
 		$html .= sprintf(
 			'<option value="two" %s>%s</option>',
 			selected( $option[ $array ], 'two', false ),
-			__( 'Option Two', 'sitecore' )
+			__( 'Option Two', 'ccdzine' )
 		);
 		$html .= '</select>';
 		$html .= sprintf(
@@ -385,7 +385,7 @@ class Settings_Fields_Sample extends Settings_Fields {
 			$field_id,
 			$field_id,
 			$option,
-			__( 'Enter text&hellip;', 'sitecore' )
+			__( 'Enter text&hellip;', 'ccdzine' )
 		);
 		$html .= sprintf(
 			'<p class="description">%s</p>',

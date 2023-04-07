@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,13 +37,13 @@ class Register_Sample_Type extends Register_Type {
 		 * parent class will capitalize them where appropriate.
 		 */
 		$labels = [
-			'singular'    => __( 'sample post', 'sitecore' ),
-			'plural'      => __( 'sample posts', 'sitecore' ),
+			'singular'    => __( 'sample post', 'ccdzine' ),
+			'plural'      => __( 'sample posts', 'ccdzine' ),
 			'description' => '',
 			'menu_icon'   => 'dashicons-lightbulb',
 			'excerpt_mb'  => [
-				'title'       => __( 'Describe This Post', 'sitecore' ),
-				'description' => __( 'Add a brief description of this content.', 'sitecore' )
+				'title'       => __( 'Describe This Post', 'ccdzine' ),
+				'description' => __( 'Add a brief description of this content.', 'ccdzine' )
 			]
 		];
 
@@ -120,9 +120,9 @@ class Register_Sample_Type extends Register_Type {
 		$type_obj  = get_post_type_object( $post_type );
 
 		// New post type labels.
-		$type_obj->labels->menu_name = __( 'Sample Type', 'sitecore' );
-		$type_obj->labels->all_items = __( 'All Samples', 'sitecore' );
-		$type_obj->labels->add_new   = __( 'New Sample', 'sitecore' );
+		$type_obj->labels->menu_name = __( 'Sample Type', 'ccdzine' );
+		$type_obj->labels->all_items = __( 'All Samples', 'ccdzine' );
+		$type_obj->labels->add_new   = __( 'New Sample', 'ccdzine' );
 	}
 
 	/**
@@ -144,13 +144,13 @@ class Register_Sample_Type extends Register_Type {
 				'core/heading',
 				[
 					'level'       => 2,
-					'placeholder' => __( 'Sample Heading', 'sitecore' )
+					'placeholder' => __( 'Sample Heading', 'ccdzine' )
 				]
 			],
 			[
 				'core/paragraph',
 				[
-					'placeholder' => __( 'This is a sample paragraph included by the template() method in the class that registers this post type.', 'sitecore' )
+					'placeholder' => __( 'This is a sample paragraph included by the template() method in the class that registers this post type.', 'ccdzine' )
 				]
 			],
 		];

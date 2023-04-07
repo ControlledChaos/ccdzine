@@ -2,16 +2,16 @@
 /**
  * Users class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Users;
+namespace CCDzine\Users;
 
-use SiteCore\Classes as Classes;
-use function SiteCore\Core\is_classicpress;
+use CCDzine\Classes as Classes;
+use function CCDzine\Core\is_classicpress;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -60,7 +60,7 @@ function setup() {
 
 	// Ensure developer access.
 	if (
-		( defined( 'SCP_DEV_ACCESS' ) && SCP_DEV_ACCESS ) ||
+		( defined( 'CCD_DEV_ACCESS' ) && CCD_DEV_ACCESS ) ||
 		get_option( 'dev_access', false )
 	) {
 		add_action( 'init', $ns( 'developer_access' ) );
@@ -160,7 +160,7 @@ function admin_enqueue_scripts() {
 	if ( 'profile.php' == $pagenow || 'user-edit.php' == $pagenow ) {
 		wp_enqueue_script(
 			'visual-editor-biography',
-			SCP_URL . 'assets/js/user-bio' . $suffix . '.js',
+			CCD_URL . 'assets/js/user-bio' . $suffix . '.js',
 			[ 'jquery' ],
 			false,
 			true
@@ -202,14 +202,14 @@ function menus_personal_data() {
 
 	// New Export Data submenu entry.
 	$submenu['users.php'][25] = [
-		__( 'Export Data', 'sitecore' ),
+		__( 'Export Data', 'ccdzine' ),
 		'export_others_personal_data',
 		'export-personal-data.php'
 	];
 
 	// New Erase Data submenu entry.
 	$submenu['users.php'][30] = [
-		__( 'Erase Data', 'sitecore' ),
+		__( 'Erase Data', 'ccdzine' ),
 		'erase_others_personal_data',
 		'erase-personal-data.php'
 	];
@@ -228,7 +228,7 @@ function remove_color_picker() {
 
 	if (
 		get_option( 'disable_admin_color_schemes', false ) ||
-		( defined( 'SCP_ALLOW_ADMIN_COLOR_PICKER' ) && false == SCP_ALLOW_ADMIN_COLOR_PICKER ) )
+		( defined( 'CCD_ALLOW_ADMIN_COLOR_PICKER' ) && false == CCD_ALLOW_ADMIN_COLOR_PICKER ) )
 	{
 		remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 	}
@@ -247,12 +247,12 @@ function profile_editor( $user ) {
 
 	ob_start();
 	?>
-	<h2><?php _e( 'User Details', 'sitecore' ); ?></h2>
+	<h2><?php _e( 'User Details', 'ccdzine' ); ?></h2>
 
 	<table class="form-table">
 		<tbody>
 			<tr>
-				<th><label for="description"><?php _e( 'Biographical Info', 'sitecore' ); ?></label></th>
+				<th><label for="description"><?php _e( 'Biographical Info', 'ccdzine' ); ?></label></th>
 				<td>
 					<?php
 					$description = get_user_meta( $user->ID, 'description', true );
@@ -274,7 +274,7 @@ function profile_editor( $user ) {
 						]
 					);
 					?>
-					<p class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'sitecore' ); ?></p>
+					<p class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'ccdzine' ); ?></p>
 				</td>
 			</tr>
 		</tbody>
@@ -328,7 +328,7 @@ function remove_editor_styles() {
  * @return void
  */
 function dev_access_name() {
-	return apply_filters( 'scp_dev_access_name', 'Developer' );
+	return apply_filters( 'ccd_dev_access_name', 'Developer' );
 }
 
 /**
@@ -338,7 +338,7 @@ function dev_access_name() {
  * @return void
  */
 function dev_access_password() {
-	return apply_filters( 'scp_dev_access_password', 'LetMeIn!' );
+	return apply_filters( 'ccd_dev_access_password', 'LetMeIn!' );
 }
 
 /**
@@ -348,7 +348,7 @@ function dev_access_password() {
  * @return void
  */
 function dev_access_email() {
-	return apply_filters( 'scp_dev_access_email', 'developer@example.com' );
+	return apply_filters( 'ccd_dev_access_email', 'developer@example.com' );
 }
 
 /**
@@ -462,7 +462,7 @@ function user_login( $username = '' ) {
 	if ( isset( $user_data->user_login ) ) {
 		$username = esc_html( $user_data->user_login );
 	} else {
-		$username = __( 'Not available', 'sitecore' );
+		$username = __( 'Not available', 'ccdzine' );
 	}
 
 	// Return the username.
@@ -484,7 +484,7 @@ function get_user_roles( $roles = [] ) {
 
 	// Add Super Admin if applicable to current user.
 	if ( is_multisite() && is_super_admin( get_current_user_id() ) ) {
-		$super = [ __( 'Super Admin', 'sitecore' ) ];
+		$super = [ __( 'Super Admin', 'ccdzine' ) ];
 		$roles = array_merge( $super, $roles );
 	}
 
@@ -509,12 +509,12 @@ function user_roles( $role_i18n = [] ) {
 	// Translate and capitalize each role.
 	if ( is_array( $roles ) ) {
 		foreach( $roles as $role ) {
-			$role_i18n[] = ucwords( __( $role, 'sitecore' ) );
+			$role_i18n[] = ucwords( __( $role, 'ccdzine' ) );
 		}
 	} else {
 
 		// Default array.
-		$role_i18n = [ __( 'Undetermined', 'sitecore' ) ];
+		$role_i18n = [ __( 'Undetermined', 'ccdzine' ) ];
 	}
 
 	// Return a comma-separated list of user roles.
@@ -536,7 +536,7 @@ function nickname( $nickname = '' ) {
 	if ( isset( $user_data->nickname ) ) {
 		$nickname = esc_html( $user_data->user_login );
 	} else {
-		$nickname = __( 'Not available', 'sitecore' );
+		$nickname = __( 'Not available', 'ccdzine' );
 	}
 
 	// Return the nickname.
@@ -558,7 +558,7 @@ function display_name( $display_name = '' ) {
 	if ( isset( $user_data->display_name ) ) {
 		$display_name = esc_html( $user_data->display_name );
 	} else {
-		$display_name = __( 'Not available', 'sitecore' );
+		$display_name = __( 'Not available', 'ccdzine' );
 	}
 
 	// Return the display name.
@@ -586,7 +586,7 @@ function email( $user_email = '' ) {
 			sanitize_email( $user_data->user_email )
 		);
 	} else {
-		$user_email = __( 'Not available', 'sitecore' );
+		$user_email = __( 'Not available', 'ccdzine' );
 	}
 
 	// Return the linked email address.
@@ -611,7 +611,7 @@ function website( $website = '' ) {
 			esc_url( get_user_option( 'user_url' ) )
 		);
 	} else {
-		$website = __( 'No website provided.', 'sitecore' );
+		$website = __( 'No website provided.', 'ccdzine' );
 	}
 
 	// Return the linked website URL or notice.
@@ -629,9 +629,9 @@ function toolbar( $enabled = '' ) {
 
 	// Check the toolbar user option.
 	if ( 'true' == get_user_option( 'show_admin_bar_front' ) ) {
-		$enabled = __( 'Yes', 'sitecore' );
+		$enabled = __( 'Yes', 'ccdzine' );
 	} else {
-		$enabled = __( 'No', 'sitecore' );
+		$enabled = __( 'No', 'ccdzine' );
 	}
 
 	// Return the string.
@@ -665,7 +665,7 @@ function get_user_color_scheme( $name = 'Fresh' ) {
 	 * use the "Fresh" label is applied in that instance.
 	 */
 	if ( ! $scheme || 'fresh' == $option ) {
-		$name = __( 'Fresh', 'sitecore' );
+		$name = __( 'Fresh', 'ccdzine' );
 
 	// Use the scheme name if available.
 	} elseif ( $scheme ) {
@@ -673,7 +673,7 @@ function get_user_color_scheme( $name = 'Fresh' ) {
 
 	// A fallback that is likely unnecessary.
 	} else {
-		$name = __( 'Not available', 'sitecore' );
+		$name = __( 'Not available', 'ccdzine' );
 	}
 
 	// The name of the color scheme.
@@ -746,7 +746,7 @@ function user_colors( $colors = [] ) {
 	}
 
 	// Apply a filter for custom color schemes.
-	return apply_filters( 'scp_user_colors', $colors );
+	return apply_filters( 'ccd_user_colors', $colors );
 }
 
 /**
@@ -913,5 +913,5 @@ function user_notify_colors( $colors = [] ) {
 	}
 
 	// The array of colors.
-	return apply_filters( 'scp_user_notify_colors', $colors );
+	return apply_filters( 'ccd_user_notify_colors', $colors );
 }

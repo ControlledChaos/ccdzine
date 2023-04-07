@@ -2,13 +2,13 @@
 /**
  * Content settings class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,9 +27,9 @@ class Content_Settings_Page extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Website Content', 'sitecore' ),
-			'menu_title'  => __( 'Content', 'sitecore' ),
-			'description' => __( 'Manage how the content of this website is edited and displayed.', 'sitecore' )
+			'page_title'  => __( 'Website Content', 'ccdzine' ),
+			'menu_title'  => __( 'Content', 'ccdzine' ),
+			'description' => __( 'Manage how the content of this website is edited and displayed.', 'ccdzine' )
 		];
 
 		$options = [
@@ -61,8 +61,8 @@ class Content_Settings_Page extends Add_Page {
 
 		$this->add_content_tab( [
 			'id'       => 'content-settings-intro',
-			'tab'      => __( 'Intro', 'sitecore' ),
-			'heading'  => __( 'About This Website\'s Content', 'sitecore' ),
+			'tab'      => __( 'Intro', 'ccdzine' ),
+			'heading'  => __( 'About This Website\'s Content', 'ccdzine' ),
 			'content'  => '',
 			'callback' => [ $this, 'intro_tab' ]
 		] );
@@ -70,8 +70,8 @@ class Content_Settings_Page extends Add_Page {
 		$this->add_content_tab( [
 			'capability' => 'manage_options',
 			'id'         => 'content-settings-sample',
-			'tab'        => __( 'Options', 'sitecore' ),
-			'heading'    => __( 'Website Content Options', 'sitecore' ),
+			'tab'        => __( 'Options', 'ccdzine' ),
+			'heading'    => __( 'Website Content Options', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'settings_tab' ]
 		] );
@@ -85,7 +85,7 @@ class Content_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function intro_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-content-intro.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-content-intro.php';
 	}
 
 	/**
@@ -96,6 +96,6 @@ class Content_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function settings_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-content.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-content.php';
 	}
 }

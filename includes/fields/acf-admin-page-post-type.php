@@ -4,13 +4,13 @@
  *
  * Requires ACF Pro to be active,
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Fields
  * @category   ACF
  * @since      1.0.0
  */
 
-namespace SiteCore\Fields\ACF;
+namespace CCDzine\Fields\ACF;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,15 +23,15 @@ if ( ! class_exists( 'acf_pro' ) ) {
 
 acf_add_local_field_group( [
 	'key'    => 'group_641fa9326c59e',
-	'title'  => __( 'Admin Pages', 'sitecore' ),
+	'title'  => __( 'Admin Pages', 'ccdzine' ),
 	'fields' => [
 		[
 			'key'               => 'field_6423c22c70f37',
-			'label'             => __( 'Page', 'sitecore' ),
+			'label'             => __( 'Page', 'ccdzine' ),
 			'name'              => '',
 			'aria-label'        => '',
 			'type'              => 'tab',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -44,10 +44,10 @@ acf_add_local_field_group( [
 		],
 		[
 			'key'               => 'field_641fb215c7dac',
-			'label'             => __( 'User Capability', 'sitecore' ),
+			'label'             => __( 'User Capability', 'ccdzine' ),
 			'name'              => 'admin_post_capability',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -56,17 +56,17 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => 'read',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_641fb27233f80',
-			'label'             => __( 'Menu Label', 'sitecore' ),
+			'label'             => __( 'Menu Label', 'ccdzine' ),
 			'name'              => 'admin_post_menu_title',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -75,17 +75,17 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_641fa9b6422b4',
-			'label'             => __( 'Icon URL', 'sitecore' ),
+			'label'             => __( 'Icon URL', 'ccdzine' ),
 			'name'              => 'admin_post_icon_url',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -94,17 +94,17 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_641fabeff9496',
-			'label'             => __( 'Menu Position', 'sitecore' ),
+			'label'             => __( 'Menu Position', 'ccdzine' ),
 			'name'              => 'admin_post_position',
 			'type'              => 'number',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -113,7 +113,7 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'min'  => '',
@@ -122,10 +122,10 @@ acf_add_local_field_group( [
 		],
 		[
 			'key'               => 'field_641fa95b422b3',
-			'label'             => __( 'Page Slug', 'sitecore' ),
+			'label'             => __( 'Page Slug', 'ccdzine' ),
 			'name'              => 'admin_post_page_slug',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -134,17 +134,17 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_641fabc7f9495',
-			'label'             => __( 'Parent Slug', 'sitecore' ),
+			'label'             => __( 'Parent Slug', 'ccdzine' ),
 			'name'              => 'admin_post_parent_slug',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -153,18 +153,18 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_642622e9e343c',
-			'label'             => __( 'Hook Priority', 'sitecore' ),
+			'label'             => __( 'Hook Priority', 'ccdzine' ),
 			'name'              => 'admin_post_hook_priority',
 			'aria-label'        => '',
 			'type'              => 'number',
-			'instructions'      => __( 'When to hook into the admin menu. Set lower than 10 if post types are added as submenu items.', 'sitecore' ),
+			'instructions'      => __( 'When to hook into the admin menu. Set lower than 10 if post types are added as submenu items.', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -182,10 +182,10 @@ acf_add_local_field_group( [
 		],
 		[
 			'key'               => 'field_641faf68b8b3f',
-			'label'             => __( 'Page Description', 'sitecore' ),
+			'label'             => __( 'Page Description', 'ccdzine' ),
 			'name'              => 'admin_post_description',
 			'type'              => 'text',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -194,18 +194,18 @@ acf_add_local_field_group( [
 				'id'    => '',
 			],
 			'default_value' => '',
-			'placeholder'   => __( '', 'sitecore' ),
+			'placeholder'   => __( '', 'ccdzine' ),
 			'prepend'       => '',
 			'append'        => '',
 			'maxlength'     => '',
 		],
 		[
 			'key'               => 'field_6423c24670f38',
-			'label'             => __( 'Content', 'sitecore' ),
+			'label'             => __( 'Content', 'ccdzine' ),
 			'name'              => '',
 			'aria-label'        => '',
 			'type'              => 'tab',
-			'instructions'      => __( '', 'sitecore' ),
+			'instructions'      => __( '', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -218,11 +218,11 @@ acf_add_local_field_group( [
 		],
 		[
 			'key'               => 'field_6423c04c1d0ae',
-			'label'             => __( 'Content Tabs', 'sitecore' ),
+			'label'             => __( 'Content Tabs', 'ccdzine' ),
 			'name'              => 'admin_post_content_tabs',
 			'aria-label'        => '',
 			'type'              => 'repeater',
-			'instructions'      => __( 'If only one tab is added then the content will appear without the tabs switcher interface.', 'sitecore' ),
+			'instructions'      => __( 'If only one tab is added then the content will appear without the tabs switcher interface.', 'ccdzine' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -236,16 +236,16 @@ acf_add_local_field_group( [
 			'min'           => 0,
 			'max'           => 0,
 			'collapsed'     => 'field_6423c0c2c5e1f',
-			'button_label'  => __( 'Add Tab', 'sitecore' ),
+			'button_label'  => __( 'Add Tab', 'ccdzine' ),
 			'rows_per_page' => 20,
 			'sub_fields'    => [
 				[
 					'key'               => 'field_6423c3b763d5e',
-					'label'             => __( 'Options', 'sitecore' ),
+					'label'             => __( 'Options', 'ccdzine' ),
 					'name'              => '',
 					'aria-label'        => '',
 					'type'              => 'tab',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => [
@@ -259,11 +259,11 @@ acf_add_local_field_group( [
 				],
 				[
 					'key'               => 'field_6423c0c2c5e1f',
-					'label'             => __( 'Tab Label', 'sitecore' ),
+					'label'             => __( 'Tab Label', 'ccdzine' ),
 					'name'              => 'admin_post_content_tab_label',
 					'aria-label'        => '',
 					'type'              => 'text',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper' => [
@@ -273,18 +273,18 @@ acf_add_local_field_group( [
 					],
 					'default_value' => '',
 					'maxlength'     => '',
-					'placeholder'   => __( '', 'sitecore' ),
+					'placeholder'   => __( '', 'ccdzine' ),
 					'prepend' => '',
 					'append'  => '',
 					'parent_repeater' => 'field_6423c04c1d0ae',
 				],
 				[
 					'key'               => 'field_6423c0f6c5e20',
-					'label'             => __( 'Tab Heading', 'sitecore' ),
+					'label'             => __( 'Tab Heading', 'ccdzine' ),
 					'name'              => 'admin_post_content_tab_heading',
 					'aria-label'        => '',
 					'type'              => 'text',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => [
@@ -294,18 +294,18 @@ acf_add_local_field_group( [
 					],
 					'default_value' => '',
 					'maxlength'     => '',
-					'placeholder'   => __( '', 'sitecore' ),
+					'placeholder'   => __( '', 'ccdzine' ),
 					'prepend' => '',
 					'append'  => '',
 					'parent_repeater' => 'field_6423c04c1d0ae',
 				],
 				[
 					'key'               => 'field_6423c42ab8ca3',
-					'label'             => __( 'User Capability', 'sitecore' ),
+					'label'             => __( 'User Capability', 'ccdzine' ),
 					'name'              => 'admin_post_content_tab_user_cap',
 					'aria-label'        => '',
 					'type'              => 'text',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => [
@@ -315,18 +315,18 @@ acf_add_local_field_group( [
 					],
 					'default_value' => 'read',
 					'maxlength'     => '',
-					'placeholder'   => __( '', 'sitecore' ),
+					'placeholder'   => __( '', 'ccdzine' ),
 					'prepend'       => '',
 					'append'        => '',
 					'parent_repeater' => 'field_6423c04c1d0ae',
 				],
 				[
 					'key'               => 'field_6423c3cf63d5f',
-					'label'             => __( 'Editor', 'sitecore' ),
+					'label'             => __( 'Editor', 'ccdzine' ),
 					'name'              => '',
 					'aria-label'        => '',
 					'type'              => 'tab',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => [
@@ -340,11 +340,11 @@ acf_add_local_field_group( [
 				],
 				[
 					'key'               => 'field_6423c116c5e21',
-					'label'             => __( 'Tab Content', 'sitecore' ),
+					'label'             => __( 'Tab Content', 'ccdzine' ),
 					'name'              => 'admin_post_content_tab_content',
 					'aria-label'        => '',
 					'type'              => 'wysiwyg',
-					'instructions'      => __( '', 'sitecore' ),
+					'instructions'      => __( '', 'ccdzine' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => [
@@ -389,7 +389,7 @@ acf_add_local_field_group( [
 		9 => 'the_content',
 	],
 	'active'             => true,
-	'description'        => __( '', 'sitecore' ),
+	'description'        => __( '', 'ccdzine' ),
 	'show_in_rest'       => 0,
 	'acfe_display_title' => '',
 	'acfe_autosync'      => '',

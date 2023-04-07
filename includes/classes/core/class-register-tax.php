@@ -2,13 +2,13 @@
 /**
  * Base class to register a taxonomy
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -149,7 +149,7 @@ class Register_Tax {
 	public function options() {
 
 		$options = [
-			'label'                 => __( ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
+			'label'                 => __( ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
 			'labels'                => $this->labels(),
 			'public'                => $this->tax_options['public'],
 			'hierarchical'          => $this->tax_options['hierarchical'],
@@ -182,28 +182,28 @@ class Register_Tax {
 	public function labels() {
 
 		$labels = [
-			'name'                       => __( ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'singular_name'              => __( ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'menu_name'                  => __( ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'all_items'                  => __( 'All ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'edit_item'                  => __( 'Edit ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'view_item'                  => __( 'View ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'update_item'                => __( 'Update ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'add_new_item'               => __( 'Add New ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'new_item_name'              => __( 'New ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'parent_item'                => __( 'Parent ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'popular_items'              => __( 'Popular ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->tax_labels['plural'] ) . ' with commas', 'sitecore' ),
-			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'not_found'                  => __( 'No ' . ucwords( $this->tax_labels['plural'] ) . ' Found', 'sitecore' ),
-			'no_terms'                   => __( 'No ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'filter_by_item'             => __( 'Filter by ' . ucwords( $this->tax_labels['singular'] ), 'sitecore' ),
-			'items_list_navigation'      => __( ucwords( $this->tax_labels['plural'] ) . ' list navigation', 'sitecore' ),
-			'items_list'                 => __( ucwords( $this->tax_labels['plural'] ) . ' List', 'sitecore' ),
-			'most_used'                  => __( 'Most Used ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' ),
-			'back_to_items'              => __( 'Back to ' . ucwords( $this->tax_labels['plural'] ), 'sitecore' )
+			'name'                       => __( ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'singular_name'              => __( ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'menu_name'                  => __( ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'all_items'                  => __( 'All ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'edit_item'                  => __( 'Edit ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'view_item'                  => __( 'View ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'update_item'                => __( 'Update ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'add_new_item'               => __( 'Add New ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'new_item_name'              => __( 'New ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'parent_item'                => __( 'Parent ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'popular_items'              => __( 'Popular ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->tax_labels['plural'] ) . ' with commas', 'ccdzine' ),
+			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'not_found'                  => __( 'No ' . ucwords( $this->tax_labels['plural'] ) . ' Found', 'ccdzine' ),
+			'no_terms'                   => __( 'No ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'filter_by_item'             => __( 'Filter by ' . ucwords( $this->tax_labels['singular'] ), 'ccdzine' ),
+			'items_list_navigation'      => __( ucwords( $this->tax_labels['plural'] ) . ' list navigation', 'ccdzine' ),
+			'items_list'                 => __( ucwords( $this->tax_labels['plural'] ) . ' List', 'ccdzine' ),
+			'most_used'                  => __( 'Most Used ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' ),
+			'back_to_items'              => __( 'Back to ' . ucwords( $this->tax_labels['plural'] ), 'ccdzine' )
 		];
 
 		// Filter for child classes to modify this array.

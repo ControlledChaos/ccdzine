@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,9 +37,9 @@ class Register_Sample_Tax extends Register_Tax {
 		];
 
 		$labels = [
-			'singular'    => __( 'sample tax', 'sitecore' ),
-			'plural'      => __( 'sample taxes', 'sitecore' ),
-			'description' => __( 'A sample taxonomy for the sample post type.', 'sitecore' )
+			'singular'    => __( 'sample tax', 'ccdzine' ),
+			'plural'      => __( 'sample taxes', 'ccdzine' ),
+			'description' => __( 'A sample taxonomy for the sample post type.', 'ccdzine' )
 		];
 
 		$options = [

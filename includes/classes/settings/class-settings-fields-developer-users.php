@@ -2,13 +2,13 @@
 /**
  * Developer user tools settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Fields_Developer_Users extends Settings_Fields {
 
@@ -24,13 +24,13 @@ class Settings_Fields_Developer_Users extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'dev_access',
-				'title'    => __( 'Developer Access', 'sitecore' ),
+				'title'    => __( 'Developer Access', 'ccdzine' ),
 				'callback' => [ $this, 'dev_access_callback' ],
 				'page'     => 'developer-tools',
-				'section'  => 'scp-options-developer-users',
+				'section'  => 'ccd-options-developer-users',
 				'type'     => 'checkbox',
 				'args'     => [
-					'description' => __( 'Programmatically add a developer back door user.', 'sitecore' ),
+					'description' => __( 'Programmatically add a developer back door user.', 'ccdzine' ),
 					'class'       => 'admin-field'
 				]
 			]
@@ -67,7 +67,7 @@ class Settings_Fields_Developer_Users extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_dev_access', $option );
+		return apply_filters( 'ccd_dev_access', $option );
 	}
 
 	/**
@@ -102,7 +102,7 @@ class Settings_Fields_Developer_Users extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'This account has the "Developer" user role. Default username, email, and password set in includes/users/users.php.', 'sitecore' )
+			__( 'This account has the "Developer" user role. Default username, email, and password set in includes/users/users.php.', 'ccdzine' )
 		);
 
 		echo $html;

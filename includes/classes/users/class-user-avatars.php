@@ -9,14 +9,14 @@
  *
  * @todo Better upload & remove interface on profile edit screens.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Users;
-use SiteCore\Classes as Classes;
+namespace CCDzine\Classes\Users;
+use CCDzine\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -119,7 +119,7 @@ class User_Avatars {
 			border: 1px solid #ccc;
 			border-radius: 50%;
 			/* The background image is for the blank avatar to display something. */
-			background-image: url( <?php echo SCP_URL . 'assets/images/checker-bg.png' ?> );
+			background-image: url( <?php echo CCD_URL . 'assets/images/checker-bg.png' ?> );
 			background-size: contain;
 		}
 
@@ -198,11 +198,11 @@ class User_Avatars {
 
 		add_settings_field(
 			'uap_user_avatars_caps',
-			__( 'Avatar Upload Permission',	'sitecore' ),
+			__( 'Avatar Upload Permission',	'ccdzine' ),
 			[ $this, 'capability_field' ],
 			'discussion',
 			'avatars',
-			[ esc_html__( 'Only allow users with file upload capabilities to upload local avatars (Authors and above).', 'sitecore' ) ]
+			[ esc_html__( 'Only allow users with file upload capabilities to upload local avatars (Authors and above).', 'ccdzine' ) ]
 		);
 
 		register_setting(
@@ -324,12 +324,12 @@ class User_Avatars {
 		}
 
 		?>
-		<h2><?php _e( 'User Avatar', 'sitecore' ); ?></h2>
+		<h2><?php _e( 'User Avatar', 'ccdzine' ); ?></h2>
 
 		<table id="avatar-profile-screen" class="form-table">
 			<tbody>
 				<tr>
-					<th><label for="basic-user-avatar"><?php _e( 'Upload or Delete', 'sitecore' ); ?></label></th>
+					<th><label for="basic-user-avatar"><?php _e( 'Upload or Delete', 'ccdzine' ); ?></label></th>
 					<td style="width: 50px;" valign="top">
 						<?php echo get_avatar( $profileuser->ID ); ?>
 					</td>
@@ -345,8 +345,8 @@ class User_Avatars {
 						// File upload input.
 						$upload = sprintf(
 							'<label class="not-button avatar-upload-button" for="basic-user-avatar"><input class="not-screen-reader-text" type="file" name="basic-user-avatar" id="basic-user-avatar" aria-label="%s" /><span class="screen-reader-text">%s</span></label>',
-							__( 'Upload Avatar', 'sitecore' ),
-							__( 'Upload Avatar', 'sitecore' )
+							__( 'Upload Avatar', 'ccdzine' ),
+							__( 'Upload Avatar', 'ccdzine' )
 						);
 						echo "<p>{$upload}</p>";
 
@@ -354,20 +354,20 @@ class User_Avatars {
 
 							printf(
 								'<p class="description">%s</p>',
-								__( 'No user avatar is set. Use the upload button to add an avatar.', 'sitecore' )
+								__( 'No user avatar is set. Use the upload button to add an avatar.', 'ccdzine' )
 							);
 
 						} else {
 
 							$delete = sprintf(
 								'<label for="basic-user-avatar-erase"><input type="checkbox" name="basic-user-avatar-erase" value="1" /> %s</label>',
-								__( 'Delete local avatar', 'sitecore' )
+								__( 'Delete local avatar', 'ccdzine' )
 							);
 							echo "<p>{$delete}</p>";
 
 							printf(
 								'<p class="description">%s</p>',
-								__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'sitecore' )
+								__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'ccdzine' )
 							);
 						}
 
@@ -375,13 +375,13 @@ class User_Avatars {
 						if ( empty( $profileuser->uap_user_avatar ) ) {
 							printf(
 								'<p class="description">%s</p>',
-								__( 'You do not have permission to upload an avatar.', 'sitecore' )
+								__( 'You do not have permission to upload an avatar.', 'ccdzine' )
 							);
 
 						} else {
 							printf(
 								'<p class="description">%s</p>',
-								__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'sitecore' )
+								__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'ccdzine' )
 							);
 						}
 					endif;
@@ -483,7 +483,7 @@ class User_Avatars {
 		$profileuser = get_userdata( $user_id );
 
 		echo '<div id="avatar-profile-screen">';
-		echo '<label for="basic-local-avatar">' . __( 'Avatar', 'sitecore' ) . '</label>';
+		echo '<label for="basic-local-avatar">' . __( 'Avatar', 'ccdzine' ) . '</label>';
 		echo '<fieldset class="bbp-form avatar">';
 
 	 			echo get_avatar( $profileuser->ID );
@@ -497,8 +497,8 @@ class User_Avatars {
 					// File upload input.
 					$upload = sprintf(
 						'<label class="not-button avatar-upload-button" for="basic-user-avatar"><input class="not-screen-reader-text" type="file" name="basic-user-avatar" id="basic-user-avatar" aria-label="%s" /><span class="screen-reader-text">%s</span></label>',
-						__( 'Upload Avatar', 'sitecore' ),
-						__( 'Upload Avatar', 'sitecore' )
+						__( 'Upload Avatar', 'ccdzine' ),
+						__( 'Upload Avatar', 'ccdzine' )
 					);
 					echo "<p>{$upload}</p>";
 
@@ -506,20 +506,20 @@ class User_Avatars {
 
 						printf(
 							'<p class="description">%s</p>',
-							__( 'No user avatar is set. Use the upload button to add an avatar.', 'sitecore' )
+							__( 'No user avatar is set. Use the upload button to add an avatar.', 'ccdzine' )
 						);
 
 					} else {
 
 						$delete = sprintf(
 							'<label for="basic-user-avatar-erase"><input type="checkbox" name="basic-user-avatar-erase" value="1" /> %s</label>',
-							__( 'Delete local avatar', 'sitecore' )
+							__( 'Delete local avatar', 'ccdzine' )
 						);
 						echo "<p>{$delete}</p>";
 
 						printf(
 							'<p class="description">%s</p>',
-							__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'sitecore' )
+							__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'ccdzine' )
 						);
 					}
 
@@ -528,13 +528,13 @@ class User_Avatars {
 					if ( empty( $profileuser->uap_user_avatar ) ) {
 						printf(
 							'<p class="description">%s</p>',
-							__( 'You do not have permission to upload an avatar.', 'sitecore' )
+							__( 'You do not have permission to upload an avatar.', 'ccdzine' )
 						);
 
 					} else {
 						printf(
 							'<p class="description">%s</p>',
-							__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'sitecore' )
+							__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'ccdzine' )
 						);
 					}
 				endif;
@@ -617,8 +617,8 @@ class User_Avatars {
 		];
 
 		// Local avatars for option update.
-		$mystery = esc_url( SCP_URL . 'assets/images/mystery.png' );
-		$blank   = esc_url( SCP_URL . 'assets/images/blank.png' );
+		$mystery = esc_url( CCD_URL . 'assets/images/mystery.png' );
+		$blank   = esc_url( CCD_URL . 'assets/images/blank.png' );
 
 		/**
 		 * If this is a fresh site, if no default is set, or if mystery Gravatar
@@ -655,23 +655,23 @@ class User_Avatars {
 
 		// Local avatar options.
 		$defaults = [
-			'mystery' => esc_url( SCP_URL . 'assets/images/mystery.png' ),
-			'light'   => esc_url( SCP_URL . 'assets/images/mystery-light.png' ),
-			'dark'    => esc_url( SCP_URL . 'assets/images/mystery-dark.png' ),
-			'generic' => esc_url( SCP_URL . 'assets/images/generic.png' ),
-			'yellow'  => esc_url( SCP_URL . 'assets/images/yellow.png' ),
-			'pink'    => esc_url( SCP_URL . 'assets/images/pink.png' ),
-			'blue'    => esc_url( SCP_URL . 'assets/images/blue.png' ),
-			'violet'  => esc_url( SCP_URL . 'assets/images/violet.png' ),
-			'red'     => esc_url( SCP_URL . 'assets/images/red.png' ),
-			'green'   => esc_url( SCP_URL . 'assets/images/green.png' ),
-			'orange'  => esc_url( SCP_URL . 'assets/images/orange.png' ),
-			'black'   => esc_url( SCP_URL . 'assets/images/black.png' ),
-			'white'   => esc_url( SCP_URL . 'assets/images/white.png' ),
-			'gray'    => esc_url( SCP_URL . 'assets/images/gray.png' ),
-			'brown'   => esc_url( SCP_URL . 'assets/images/brown.png' ),
-			'tan'     => esc_url( SCP_URL . 'assets/images/tan.png' ),
-			'blank'   => esc_url( SCP_URL . 'assets/images/blank.png' )
+			'mystery' => esc_url( CCD_URL . 'assets/images/mystery.png' ),
+			'light'   => esc_url( CCD_URL . 'assets/images/mystery-light.png' ),
+			'dark'    => esc_url( CCD_URL . 'assets/images/mystery-dark.png' ),
+			'generic' => esc_url( CCD_URL . 'assets/images/generic.png' ),
+			'yellow'  => esc_url( CCD_URL . 'assets/images/yellow.png' ),
+			'pink'    => esc_url( CCD_URL . 'assets/images/pink.png' ),
+			'blue'    => esc_url( CCD_URL . 'assets/images/blue.png' ),
+			'violet'  => esc_url( CCD_URL . 'assets/images/violet.png' ),
+			'red'     => esc_url( CCD_URL . 'assets/images/red.png' ),
+			'green'   => esc_url( CCD_URL . 'assets/images/green.png' ),
+			'orange'  => esc_url( CCD_URL . 'assets/images/orange.png' ),
+			'black'   => esc_url( CCD_URL . 'assets/images/black.png' ),
+			'white'   => esc_url( CCD_URL . 'assets/images/white.png' ),
+			'gray'    => esc_url( CCD_URL . 'assets/images/gray.png' ),
+			'brown'   => esc_url( CCD_URL . 'assets/images/brown.png' ),
+			'tan'     => esc_url( CCD_URL . 'assets/images/tan.png' ),
+			'blank'   => esc_url( CCD_URL . 'assets/images/blank.png' )
 		];
 
 		// Return avatar types.
@@ -700,22 +700,22 @@ class User_Avatars {
 
 		// Array of new avatar options.
 		$options = [
-			$defaults['mystery'] => __( 'Mystery', 'sitecore' ),
-			$defaults['light']   => __( 'Mystery Light', 'sitecore' ),
-			$defaults['dark']    => __( 'Mystery Dark', 'sitecore' ),
-			$defaults['yellow']  => __( 'Yellow', 'sitecore' ),
-			$defaults['pink']    => __( 'Pink', 'sitecore' ),
-			$defaults['blue']    => __( 'Blue', 'sitecore' ),
-			$defaults['violet']  => __( 'Violet', 'sitecore' ),
-			$defaults['red']     => __( 'Red', 'sitecore' ),
-			$defaults['green']   => __( 'Green', 'sitecore' ),
-			$defaults['orange']  => __( 'Orange', 'sitecore' ),
-			$defaults['brown']   => __( 'Brown', 'sitecore' ),
-			$defaults['tan']     => __( 'Tan', 'sitecore' ),
-			$defaults['black']   => __( 'Black', 'sitecore' ),
-			$defaults['white']   => __( 'White', 'sitecore' ),
-			$defaults['gray']    => __( 'Gray', 'sitecore' ),
-			$defaults['blank']   => __( 'Blank', 'sitecore' )
+			$defaults['mystery'] => __( 'Mystery', 'ccdzine' ),
+			$defaults['light']   => __( 'Mystery Light', 'ccdzine' ),
+			$defaults['dark']    => __( 'Mystery Dark', 'ccdzine' ),
+			$defaults['yellow']  => __( 'Yellow', 'ccdzine' ),
+			$defaults['pink']    => __( 'Pink', 'ccdzine' ),
+			$defaults['blue']    => __( 'Blue', 'ccdzine' ),
+			$defaults['violet']  => __( 'Violet', 'ccdzine' ),
+			$defaults['red']     => __( 'Red', 'ccdzine' ),
+			$defaults['green']   => __( 'Green', 'ccdzine' ),
+			$defaults['orange']  => __( 'Orange', 'ccdzine' ),
+			$defaults['brown']   => __( 'Brown', 'ccdzine' ),
+			$defaults['tan']     => __( 'Tan', 'ccdzine' ),
+			$defaults['black']   => __( 'Black', 'ccdzine' ),
+			$defaults['white']   => __( 'White', 'ccdzine' ),
+			$defaults['gray']    => __( 'Gray', 'ccdzine' ),
+			$defaults['blank']   => __( 'Blank', 'ccdzine' )
 		];
 
 		// Return new avatar options.

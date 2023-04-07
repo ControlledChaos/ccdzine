@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Core plugin
+ * CCDzine plugin
  *
  * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Init
  * @category   Core
  * @since      1.0.0

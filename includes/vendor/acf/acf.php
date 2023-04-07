@@ -4,7 +4,7 @@
  *
  * "Customize WordPress with powerful, professional and intuitive fields."
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Vendor
  * @category   Plugins
  * @version    x.x.x

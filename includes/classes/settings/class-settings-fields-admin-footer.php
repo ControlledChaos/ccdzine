@@ -2,15 +2,15 @@
 /**
  * Admin footer settings fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
-use function SiteCore\Core\platform_name;
+use function CCDzine\Core\platform_name;
 
 class Settings_Fields_Admin_Footer extends Settings_Fields {
 
@@ -26,14 +26,14 @@ class Settings_Fields_Admin_Footer extends Settings_Fields {
 		$fields = [
 			[
 				'id'       => 'enable_custom_admin_footer',
-				'title'    => __( 'Enable Custom Footer', 'sitecore' ),
+				'title'    => __( 'Enable Custom Footer', 'ccdzine' ),
 				'callback' => [ $this, 'enable_custom_admin_footer_callback' ],
 				'page'     => 'options-admin',
-				'section'  => 'scp-settings-section-admin-footer',
+				'section'  => 'ccd-settings-section-admin-footer',
 				'type'     => 'checkbox',
 				'args'     => [
 					'description' => sprintf(
-						__( 'Check to replace the default %s footer on admin screens.', 'sitecore' ),
+						__( 'Check to replace the default %s footer on admin screens.', 'ccdzine' ),
 						platform_name()
 					),
 					'class'       => 'admin-field'
@@ -72,7 +72,7 @@ class Settings_Fields_Admin_Footer extends Settings_Fields {
 		} else {
 			$option = false;
 		}
-		return apply_filters( 'scp_enable_custom_admin_footer', $option );
+		return apply_filters( 'ccd_enable_custom_admin_footer', $option );
 	}
 
 	/**
@@ -107,12 +107,12 @@ class Settings_Fields_Admin_Footer extends Settings_Fields {
 		$html .= '</label></fieldset>';
 		$html .= sprintf(
 			'<p class="description">%s</p>',
-			__( 'Replaces both left and right text.', 'sitecore' )
+			__( 'Replaces both left and right text.', 'ccdzine' )
 		);
 		if ( current_user_can( 'develop' ) ) {
 			$html .= sprintf(
 				'<p class="description"><em>%s</em></p>',
-				__( 'Find the text replacement options in includes/backend/admin-footer.php.', 'sitecore' )
+				__( 'Find the text replacement options in includes/backend/admin-footer.php.', 'ccdzine' )
 			);
 		}
 

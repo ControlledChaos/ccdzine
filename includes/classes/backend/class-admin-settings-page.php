@@ -2,13 +2,13 @@
 /**
  * Admin settings page
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,8 +27,8 @@ class Admin_Settings_Page extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Administration Settings', 'sitecore' ),
-			'menu_title'  => __( 'Admin', 'sitecore' ),
+			'page_title'  => __( 'Administration Settings', 'ccdzine' ),
+			'menu_title'  => __( 'Admin', 'ccdzine' ),
 			'description' => __( 'Customize the content and user interfaces of administration pages.' )
 		];
 
@@ -121,7 +121,7 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function menu_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-menu.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-menu.php';
 	}
 
 	/**
@@ -132,7 +132,7 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function dashboard_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-dashboard.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-dashboard.php';
 	}
 
 	/**
@@ -143,7 +143,7 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function toolbar_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-toolbar.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-toolbar.php';
 	}
 
 	/**
@@ -154,7 +154,7 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function header_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-header.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-header.php';
 	}
 
 	/**
@@ -165,7 +165,7 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function footer_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-footer.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-footer.php';
 	}
 
 	/**
@@ -176,6 +176,6 @@ class Admin_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function users_tab() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-admin-users.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-admin-users.php';
 	}
 }

@@ -2,13 +2,13 @@
 /**
  * Template tags
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Tags;
+namespace CCDzine\Tags;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,7 +53,7 @@ function site_logo( $html = null ) {
 		$caption = sprintf(
 			'%s %s',
 			get_bloginfo( 'name' ),
-			__( 'logo', 'sitecore' )
+			__( 'logo', 'ccdzine' )
 		);
 	}
 
@@ -68,11 +68,11 @@ function site_logo( $html = null ) {
 			);
 		$html .= sprintf(
 			'<figcaption class="screen-reader-text">%s</figcaption>',
-			esc_attr( apply_filters( 'scp_site_logo_caption', $caption ) )
+			esc_attr( apply_filters( 'ccd_site_logo_caption', $caption ) )
 		);
 		$html .= '</figure>';
 	}
 
 	// Return the logo markup or null.
-	return apply_filters( 'scp_site_logo', $html );
+	return apply_filters( 'ccd_site_logo', $html );
 }

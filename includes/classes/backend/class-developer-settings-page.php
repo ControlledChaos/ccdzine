@@ -2,13 +2,13 @@
 /**
  * Developer Tools page class
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,9 +27,9 @@ class Developer_Settings_Page extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Developer Tools', 'sitecore' ),
-			'menu_title'  => __( 'Developers', 'sitecore' ),
-			'description' => __( 'Options for custom development tools.', 'sitecore' ),
+			'page_title'  => __( 'Developer Tools', 'ccdzine' ),
+			'menu_title'  => __( 'Developers', 'ccdzine' ),
+			'description' => __( 'Options for custom development tools.', 'ccdzine' ),
 		];
 
 		$options = [
@@ -63,24 +63,24 @@ class Developer_Settings_Page extends Add_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'dev-tools',
-			'tab'        => __( 'Tools', 'sitecore' ),
-			'heading'    => __( 'Developer Tools', 'sitecore' ),
+			'tab'        => __( 'Tools', 'ccdzine' ),
+			'heading'    => __( 'Developer Tools', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'dev_tools' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'user-tools',
-			'tab'        => __( 'Users', 'sitecore' ),
-			'heading'    => __( 'User Options', 'sitecore' ),
+			'tab'        => __( 'Users', 'ccdzine' ),
+			'heading'    => __( 'User Options', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'user_tools' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'system-info',
-			'tab'        => __( 'System', 'sitecore' ),
-			'heading'    => __( 'System Information', 'sitecore' ),
+			'tab'        => __( 'System', 'ccdzine' ),
+			'heading'    => __( 'System Information', 'ccdzine' ),
 			'content'    => '',
 			'callback'   => [ $this, 'system_info' ]
 		] );
@@ -94,7 +94,7 @@ class Developer_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function dev_tools() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-dev-tools.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-dev-tools.php';
 	}
 
 	/**
@@ -105,7 +105,7 @@ class Developer_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function user_tools() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-dev-user-tools.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-dev-user-tools.php';
 	}
 
 	/**
@@ -116,6 +116,6 @@ class Developer_Settings_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function system_info() {
-		include SCP_PATH . 'views/backend/forms/partials/settings-dev-system-info.php';
+		include CCD_PATH . 'views/backend/forms/partials/settings-dev-system-info.php';
 	}
 }

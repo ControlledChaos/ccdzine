@@ -2,16 +2,16 @@
 /**
  * Various utilities
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Tools;
+namespace CCDzine\Tools;
 
-use SiteCore\Classes\Core  as Core_Class,
-	SiteCore\Classes\Tools as Tools_Class;
+use CCDzine\Classes\Core  as Core_Class,
+	CCDzine\Classes\Tools as Tools_Class;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -80,7 +80,7 @@ function is_tools_screen() {
  */
 function dev_settings_page() {
 
-	if ( class_exists( 'SiteCore\Classes\Admin\Developer_Settings_Page', ) ) {
+	if ( class_exists( 'CCDzine\Classes\Admin\Developer_Settings_Page', ) ) {
 		return true;
 	}
 	return false;
@@ -100,11 +100,11 @@ function available_tools() {
 
 	?>
 	<div class="card">
-		<h2 class="title"><?php _e( 'Developer Tools', 'sitecore' ); ?></h2>
+		<h2 class="title"><?php _e( 'Developer Tools', 'ccdzine' ); ?></h2>
 		<p>
 		<?php
 			printf(
-				__( 'As a registered developer of this website there are <a href="%s">tools available</a> to you for managing the site.', 'sitecore' ),
+				__( 'As a registered developer of this website there are <a href="%s">tools available</a> to you for managing the site.', 'ccdzine' ),
 				esc_url( admin_url( 'tools.php?page=developer-tools' ) )
 			);
 		?>
@@ -131,9 +131,9 @@ function add_help_tabs() {
 		$screen->add_help_tab(
 			[
 				'id'      => 'dev_tools',
-				'title'   => __( 'Developer Tools', 'sitecore' ),
+				'title'   => __( 'Developer Tools', 'ccdzine' ),
 				'content' => sprintf(
-					__( '<p>The <a href="%s">developer tools</a> are only available to logged-in users with the user capability of "develop" under the "Developer" user role.</p>', 'sitecore' ),
+					__( '<p>The <a href="%s">developer tools</a> are only available to logged-in users with the user capability of "develop" under the "Developer" user role.</p>', 'ccdzine' ),
 					esc_url( admin_url( 'tools.php?page=developer-tools' ) )
 				)
 			]
@@ -253,7 +253,7 @@ function toolbar_dir_switch() {
 	$wp_admin_bar->add_menu(
 		[
 			'id'    => 'RTL',
-			'title' => sprintf( __( 'Switch to %s', 'sitecore' ), strtoupper( $direction ) ),
+			'title' => sprintf( __( 'Switch to %s', 'ccdzine' ), strtoupper( $direction ) ),
 			'href'  => add_query_arg( [ 'd' => $direction ] )
 		]
 	);

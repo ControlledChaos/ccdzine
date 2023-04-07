@@ -4,13 +4,13 @@
  *
  * Select a custom post type to be displayed in place of latest posts on the front page.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Post Types
  * @category   Blog
  * @since      1.0.0
  */
 
-namespace SiteCore\Front_Page_Post_Type;
+namespace CCDzine\Front_Page_Post_Type;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -52,7 +52,7 @@ function front_page_query_args() {
 		'_builtin'          => false
 	];
 
-	return apply_filters( 'scp_front_page_query_args', $args );
+	return apply_filters( 'ccd_front_page_query_args', $args );
 }
 
 /**
@@ -85,7 +85,7 @@ function front_page_pre_get_posts( $query ) {
 
 	if ( $query->is_home() && $query->is_front_page() && $query->is_main_query() ) {
 
-		$post_type  = (string) get_option( 'scp_front_page_post_type', '' );
+		$post_type  = (string) get_option( 'ccd_front_page_post_type', '' );
 		$post_types = front_page_query_args();
 
 		if ( in_array( $post_type, $post_types ) ) {
@@ -111,21 +111,21 @@ function front_page_query_customize( $wp_customize ) {
 	$post_types = front_page_query();
 
 	$choices = [];
-	$choices['post'] = __( 'Posts', 'sitecore' );
+	$choices['post'] = __( 'Posts', 'ccdzine' );
 
 	foreach ( $post_types as $post_type ) {
 		$choices[$post_type->name] = $post_type->labels->name;
 	}
 
-	$wp_customize->add_setting( 'scp_front_page_post_type', [
+	$wp_customize->add_setting( 'ccd_front_page_post_type', [
 		'type'       => 'option',
 		'capability' => 'manage_options',
 		'default'    => 'post'
 	] );
 
-	$wp_customize->add_control( 'scp_front_page_post_type', [
-		'label'       => __( 'Front Page Post Type', 'sitecore' ),
-		'description' => __( 'Choose which post type to display in the front page feed.', 'sitecore' ),
+	$wp_customize->add_control( 'ccd_front_page_post_type', [
+		'label'       => __( 'Front Page Post Type', 'ccdzine' ),
+		'description' => __( 'Choose which post type to display in the front page feed.', 'ccdzine' ),
 		'type'        => 'radio',
 		'choices'     => $choices,
 		'section'     => 'static_front_page',
@@ -133,11 +133,11 @@ function front_page_query_customize( $wp_customize ) {
 		'active_callback' => __NAMESPACE__ . '\\front_page_query_callback'
 	] );
 
-	$wp_customize->get_section( 'static_front_page' )->description = __( 'Select what is displayed on the front page of this website. It can be posts of a selected type in reverse chronological order or static content.', 'sitecore' );
+	$wp_customize->get_section( 'static_front_page' )->description = __( 'Select what is displayed on the front page of this website. It can be posts of a selected type in reverse chronological order or static content.', 'ccdzine' );
 
 	$wp_customize->get_control( 'show_on_front' )->choices = [
-		'posts' => __( 'Post type feed', 'sitecore' ),
-		'page'  => __( 'Static content', 'sitecore' ),
+		'posts' => __( 'Post type feed', 'ccdzine' ),
+		'page'  => __( 'Static content', 'ccdzine' ),
 	];
 }
 

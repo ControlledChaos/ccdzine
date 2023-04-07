@@ -2,13 +2,13 @@
 /**
  * Sample settings sections
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace CCDzine\Classes\Settings;
 
 class Settings_Sections_Developer extends Settings_Sections {
 
@@ -23,7 +23,7 @@ class Settings_Sections_Developer extends Settings_Sections {
 
 		$sections = [
 			[
-				'id'       => 'scp-options-developer',
+				'id'       => 'ccd-options-developer',
 				'title'    => '',
 				'callback' => '',
 				'page'     => 'developer-tools',
@@ -34,7 +34,7 @@ class Settings_Sections_Developer extends Settings_Sections {
 				]
 			],
 			[
-				'id'       => 'scp-options-developer-users',
+				'id'       => 'ccd-options-developer-users',
 				'title'    => '',
 				'callback' => '',
 				'page'     => 'developer-tools',

@@ -4,13 +4,13 @@
  *
  *  Changes the default posts to "news".
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Post Types
  * @category   Blog
  * @since      1.0.0
  */
 
-namespace SiteCore\Posts_to_News;
+namespace CCDzine\Posts_to_News;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -73,29 +73,29 @@ function news_posts_labels() {
 		'menu_name'             => ucwords( menu_name() ),
 		'singular_name'         => ucwords( singular() ),
 		'all_items'             => ucwords( plural() ),
-		'add_new'               => __( 'Add News', 'sitecore' ),
-		'add_new_item'          => __( 'Add ' . ucwords( singular() ), 'sitecore' ),
-		'edit_item'             => __( 'Edit ' . ucwords( singular() ), 'sitecore' ),
-		'new_item'              => __( 'New ' . ucwords( singular() ), 'sitecore' ),
-		'view_item'             => __( 'View ' . ucwords( singular() ), 'sitecore' ),
-		'view_items'            => __( 'View ' . ucwords( plural() ), 'sitecore' ),
-		'search_items'          => __( 'Search ' . ucwords( plural() ), 'sitecore' ),
-		'not_found'             => __( 'No ' . ucwords( plural() ) . ' Found', 'sitecore' ),
-		'not_found_in_trash'    => __( 'No ' . ucwords( plural() ) . ' Found in Trash', 'sitecore' ),
-		'parent_item_colon'     => __( 'Parent ' . ucwords( singular() ), 'sitecore' ),
-		'featured_image'        => __( 'Featured image for this ' . strtolower( singular() ), 'sitecore' ),
-		'set_featured_image'    => __( 'Set featured image for this ' . strtolower( singular() ), 'sitecore' ),
-		'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( singular() ), 'sitecore' ),
-		'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( singular() ), 'sitecore' ),
-		'archives'              => __( ucwords( singular() ) . ' archives', 'sitecore' ),
-		'insert_into_item'      => __( 'Insert into ' . ucwords( singular() ), 'sitecore' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( singular() ), 'sitecore' ),
-		'filter_items_list'     => __( 'Filter ' . ucwords( plural() ), 'sitecore' ),
-		'items_list_navigation' => __( ucwords( plural() ) . ' list navigation', 'sitecore' ),
-		'items_list'            => __( ucwords( plural() ) . ' List', 'sitecore' ),
-		'attributes'            => __( ucwords( singular() ) . ' Attributes', 'sitecore' )
+		'add_new'               => __( 'Add News', 'ccdzine' ),
+		'add_new_item'          => __( 'Add ' . ucwords( singular() ), 'ccdzine' ),
+		'edit_item'             => __( 'Edit ' . ucwords( singular() ), 'ccdzine' ),
+		'new_item'              => __( 'New ' . ucwords( singular() ), 'ccdzine' ),
+		'view_item'             => __( 'View ' . ucwords( singular() ), 'ccdzine' ),
+		'view_items'            => __( 'View ' . ucwords( plural() ), 'ccdzine' ),
+		'search_items'          => __( 'Search ' . ucwords( plural() ), 'ccdzine' ),
+		'not_found'             => __( 'No ' . ucwords( plural() ) . ' Found', 'ccdzine' ),
+		'not_found_in_trash'    => __( 'No ' . ucwords( plural() ) . ' Found in Trash', 'ccdzine' ),
+		'parent_item_colon'     => __( 'Parent ' . ucwords( singular() ), 'ccdzine' ),
+		'featured_image'        => __( 'Featured image for this ' . strtolower( singular() ), 'ccdzine' ),
+		'set_featured_image'    => __( 'Set featured image for this ' . strtolower( singular() ), 'ccdzine' ),
+		'remove_featured_image' => __( 'Remove featured image for this ' . strtolower( singular() ), 'ccdzine' ),
+		'use_featured_image'    => __( 'Use as featured image for this ' . strtolower( singular() ), 'ccdzine' ),
+		'archives'              => __( ucwords( singular() ) . ' archives', 'ccdzine' ),
+		'insert_into_item'      => __( 'Insert into ' . ucwords( singular() ), 'ccdzine' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this ' . ucwords( singular() ), 'ccdzine' ),
+		'filter_items_list'     => __( 'Filter ' . ucwords( plural() ), 'ccdzine' ),
+		'items_list_navigation' => __( ucwords( plural() ) . ' list navigation', 'ccdzine' ),
+		'items_list'            => __( ucwords( plural() ) . ' List', 'ccdzine' ),
+		'attributes'            => __( ucwords( singular() ) . ' Attributes', 'ccdzine' )
 	];
-	return apply_filters( 'scp_news_posts_labels', $labels );
+	return apply_filters( 'ccd_news_posts_labels', $labels );
 }
 
 /**
@@ -156,8 +156,8 @@ function rewrite_taxonomy_labels() {
 	global $menu, $submenu;
 
 	if ( current_user_can( 'manage_categories' ) ) {
-		$submenu['edit.php'][15][0] = __( 'News Categories', 'sitecore' );
-		$submenu['edit.php'][16][0] = __( 'News Tags', 'sitecore' );
+		$submenu['edit.php'][15][0] = __( 'News Categories', 'ccdzine' );
+		$submenu['edit.php'][16][0] = __( 'News Tags', 'ccdzine' );
 	}
 }
 
@@ -168,8 +168,8 @@ function rewrite_taxonomy_labels() {
  * @return string Returns the menu name.
  */
 function menu_name() {
-	$menu_name = __( 'News', 'sitecore' );
-	return apply_filters( 'scp_news_posts_menu_name', $menu_name );
+	$menu_name = __( 'News', 'ccdzine' );
+	return apply_filters( 'ccd_news_posts_menu_name', $menu_name );
 }
 
 /**
@@ -179,8 +179,8 @@ function menu_name() {
  * @return string Returns the singular post name.
  */
 function singular() {
-	$singular = __( 'news post', 'sitecore' );
-	return apply_filters( 'scp_news_posts_singular_name', $singular );
+	$singular = __( 'news post', 'ccdzine' );
+	return apply_filters( 'ccd_news_posts_singular_name', $singular );
 }
 
 /**
@@ -190,8 +190,8 @@ function singular() {
  * @return string Returns the plural post name.
  */
 function plural() {
-	$plural = __( 'news posts', 'sitecore' );
-	return apply_filters( 'scp_news_posts_plural_name', $plural );
+	$plural = __( 'news posts', 'ccdzine' );
+	return apply_filters( 'ccd_news_posts_plural_name', $plural );
 }
 
 /**
@@ -203,7 +203,7 @@ function plural() {
  */
 function get_news_icon() {
 	$icon = 'dashicons-megaphone';
-	return apply_filters( 'scp_news_posts_icon', $icon );
+	return apply_filters( 'ccd_news_posts_icon', $icon );
 }
 
 /**
@@ -222,7 +222,7 @@ function get_news_icon_font() {
 	} else {
 		$content = '\f109';
 	}
-	return apply_filters( 'scp_news_posts_icon_font', $content );
+	return apply_filters( 'ccd_news_posts_icon_font', $content );
 }
 
 /**
@@ -262,7 +262,7 @@ function page_messages( $messages ) {
 	if ( isset( $_GET['revision'] ) ) {
 		$revision = sprintf(
 			__( '%1s %2s' ),
-			__( ucwords( singular() ) . ' restored to revision from', 'sitecore' ),
+			__( ucwords( singular() ) . ' restored to revision from', 'ccdzine' ),
 			wp_post_revision_title( (int) $_GET['revision'], false )
 		);
 	} else {
@@ -272,42 +272,42 @@ function page_messages( $messages ) {
 	// Updated message.
 	$updated = sprintf(
 		__( '%1s <a href="%2s">%3s</a>' ),
-		__( ucwords( singular() ) . ' updated.', 'sitecore' ),
+		__( ucwords( singular() ) . ' updated.', 'ccdzine' ),
 		esc_url( get_permalink( get_the_ID() ) ),
-		__( 'View News Post', 'sitecore' )
+		__( 'View News Post', 'ccdzine' )
 	);
 
 	// Published message.
 	$published = sprintf(
 		__( '%1s <a href="%2s">%3s</a>' ),
-		__( ucwords( singular() ) . ' published.', 'sitecore' ),
+		__( ucwords( singular() ) . ' published.', 'ccdzine' ),
 		esc_url( get_permalink( get_the_ID() ) ),
-		__( 'View News Post', 'sitecore' )
+		__( 'View News Post', 'ccdzine' )
 	);
 
 	// Submitted message.
 	$submitted = sprintf(
 		__( '%1s <a target="_blank" href="%2s">%3s</a>' ),
-		__( ucwords( singular() ) . ' submitted.', 'sitecore' ),
+		__( ucwords( singular() ) . ' submitted.', 'ccdzine' ),
 		esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ),
-		__( 'Preview News Post', 'sitecore' )
+		__( 'Preview News Post', 'ccdzine' )
 	);
 
 	// Scheduled message.
 	$scheduled = sprintf(
 		__( '%1s <strong>%2s</strong>. <a target="_blank" href="%3s">%4s</a>' ),
-		__( ucwords( singular() ) . ' scheduled for:', 'sitecore' ),
+		__( ucwords( singular() ) . ' scheduled for:', 'ccdzine' ),
 		date_i18n( __( 'M j, Y @ G:i' ), strtotime( get_the_date( (string) get_option( 'date_format' ), get_the_ID() ) ) ),
 		esc_url( get_permalink( get_the_ID() ) ),
-		__( 'Preview News Post', 'sitecore' )
+		__( 'Preview News Post', 'ccdzine' )
 	);
 
 	// Draft updated message.
 	$draft = sprintf(
 		__( '%1s <a target="_blank" href="%2s">%3s</a>' ),
-		__( ucwords( singular() ) . ' draft updated.', 'sitecore' ),
+		__( ucwords( singular() ) . ' draft updated.', 'ccdzine' ),
 		esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ),
-		__( 'Preview News Post', 'sitecore' )
+		__( 'Preview News Post', 'ccdzine' )
 	);
 
 	// The array of messages for the Posts post type.
@@ -316,12 +316,12 @@ function page_messages( $messages ) {
 		// First is unused. Messages start at index 1.
 		0  => null,
 		1  => $updated,
-		2  => __( 'Custom field updated.', 'sitecore' ),
-		3  => __( 'Custom field deleted.', 'sitecore' ),
-		4  => __( ucwords( singular() ) . ' updated.', 'sitecore' ),
+		2  => __( 'Custom field updated.', 'ccdzine' ),
+		3  => __( 'Custom field deleted.', 'ccdzine' ),
+		4  => __( ucwords( singular() ) . ' updated.', 'ccdzine' ),
 		5  => $revision,
 		6  => $published,
-		7  => __( ucwords( singular() ) . ' saved.', 'sitecore' ),
+		7  => __( ucwords( singular() ) . ' saved.', 'ccdzine' ),
 		8  => $submitted,
 		9  => $scheduled,
 		10 => $draft
@@ -359,7 +359,7 @@ function icon_css() {
 	);
 
 	// Print the style block.
-	echo apply_filters( 'scp_news_posts_icon_css', $style );
+	echo apply_filters( 'ccd_news_posts_icon_css', $style );
 }
 
 /**

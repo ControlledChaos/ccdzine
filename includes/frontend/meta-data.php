@@ -2,13 +2,13 @@
 /**
  * Frontend meta tags
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Meta_Tags;
+namespace CCDzine\Meta_Tags;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,7 +42,7 @@ function setup() {
  * @return boolean
  */
 function use_meta_tags() {
-	return apply_filters( 'scp_use_meta_tags', true );
+	return apply_filters( 'ccd_use_meta_tags', true );
 }
 
 /**
@@ -52,7 +52,7 @@ function use_meta_tags() {
  * @return boolean
  */
 function use_structured_data() {
-	return apply_filters( 'scp_use_structured_data', true );
+	return apply_filters( 'ccd_use_structured_data', true );
 }
 
 /**
@@ -77,14 +77,14 @@ function title() {
 	// Custom author title.
 	$author = sprintf(
 		'%1s %2s',
-		__( 'Posts by', 'sitecore' ),
+		__( 'Posts by', 'ccdzine' ),
 		get_the_author_meta( 'display_name', $author_id )
 	);
 
 	// Custom search title.
 	$search = sprintf(
 		'%1s %2s',
-		__( 'Searching', 'sitecore' ),
+		__( 'Searching', 'ccdzine' ),
 		get_bloginfo( 'name' )
 	);
 
@@ -116,7 +116,7 @@ function title() {
 		$title = '';
 	}
 
-	return apply_filters( 'scp_meta_data_title', $title );
+	return apply_filters( 'ccd_meta_data_title', $title );
 }
 
 /**
@@ -129,7 +129,7 @@ function title() {
  */
 function subtitle() {
 	$subtitle = '';
-	return apply_filters( 'scp_meta_data_subtitle', $subtitle );
+	return apply_filters( 'ccd_meta_data_subtitle', $subtitle );
 }
 
 /**
@@ -160,7 +160,7 @@ function description() {
 	$search = wp_strip_all_tags(
 		sprintf(
 			'%s %s',
-			__( 'Showing results for', 'sitecore' ),
+			__( 'Showing results for', 'ccdzine' ),
 			get_search_query()
 		)
 	);
@@ -178,13 +178,13 @@ function description() {
 		$description = $auto_excerpt;
 
 	} elseif ( is_404() ) {
-		$description = __( '404 Error: Not Found', 'sitecore' );
+		$description = __( '404 Error: Not Found', 'ccdzine' );
 
 	} else {
 		$description = '';
 	}
 
-	return apply_filters( 'scp_meta_data_description', $description );
+	return apply_filters( 'ccd_meta_data_description', $description );
 }
 
 /**
@@ -311,7 +311,7 @@ function url() {
 	}
 
 	// Return the appropriate URL in the content of the tag.
-	return apply_filters( 'scp_meta_data_url', $url );
+	return apply_filters( 'ccd_meta_data_url', $url );
 }
 
 /**
@@ -379,7 +379,7 @@ function published() {
 	}
 
 	$date = get_the_date( 'M d, Y' );
-	return apply_filters( 'scp_meta_data_published', $date );
+	return apply_filters( 'ccd_meta_data_published', $date );
 
 }
 
@@ -397,7 +397,7 @@ function modified() {
 	}
 
 	$date = get_post_modified_time( 'M d, Y' );
-	return apply_filters( 'scp_meta_data_modified', $date );
+	return apply_filters( 'ccd_meta_data_modified', $date );
 }
 
 /**
@@ -410,7 +410,7 @@ function modified() {
  */
 function post_genre() {
 	$genre = '';
-	return apply_filters( 'scp_meta_data_post_genre', $genre );
+	return apply_filters( 'ccd_meta_data_post_genre', $genre );
 }
 
 /**
@@ -422,7 +422,7 @@ function post_genre() {
  * @return array Returns an empty, filtered array.
  */
 function get_keywords() {
-	return apply_filters( 'scp_meta_data_get_keywords', [] );
+	return apply_filters( 'ccd_meta_data_get_keywords', [] );
 }
 
 /**
@@ -443,7 +443,7 @@ function keywords() {
 		$keywords = implode( ', ', $keywords );
 	}
 
-	return apply_filters( 'scp_meta_data_keywords', $keywords );
+	return apply_filters( 'ccd_meta_data_keywords', $keywords );
 }
 
 /**
@@ -494,7 +494,7 @@ function image() {
 	} else {
 		$src = '';
 	}
-	return apply_filters( 'scp_meta_data_image', $src );
+	return apply_filters( 'ccd_meta_data_image', $src );
 }
 
 /**
@@ -513,7 +513,7 @@ function site_logo( $html = null ) {
 	if ( has_custom_logo( get_current_blog_id() ) ) {
 		$logo = esc_attr( esc_url( $url[0] ) );
 	}
-	return apply_filters( 'scp_meta_data_logo', $logo );
+	return apply_filters( 'ccd_meta_data_logo', $logo );
 }
 
 /**
@@ -529,7 +529,7 @@ function copyright() {
 		get_the_time( 'Y' ),
 		get_bloginfo( 'name' )
 	);
-	return apply_filters( 'scp_meta_data_copyright', $copy );
+	return apply_filters( 'ccd_meta_data_copyright', $copy );
 }
 
 /**
@@ -568,7 +568,7 @@ function print_meta_tags() {
 	$tags .= twitter_tags();
 	$tags .= dublin_tags();
 
-	return apply_filters( 'scp_print_meta_tags', $tags );
+	return apply_filters( 'ccd_print_meta_tags', $tags );
 }
 
 /**
@@ -593,7 +593,7 @@ function print_structured_data() {
 	} elseif ( is_singular() ) {
 		$data = article_data();
 	}
-	return apply_filters( 'scp_print_structured_data', $data );
+	return apply_filters( 'ccd_print_structured_data', $data );
 }
 
 /**
@@ -603,7 +603,7 @@ function print_structured_data() {
  * @return void
  */
 function meta_tags() {
-	include SCP_PATH . 'views/frontend/meta-data/meta-tags/standard.php';
+	include CCD_PATH . 'views/frontend/meta-data/meta-tags/standard.php';
 }
 
 /**
@@ -613,7 +613,7 @@ function meta_tags() {
  * @return void
  */
 function schema_tags() {
-	include SCP_PATH . 'views/frontend/meta-data/meta-tags/schema.php';
+	include CCD_PATH . 'views/frontend/meta-data/meta-tags/schema.php';
 }
 
 /**
@@ -623,7 +623,7 @@ function schema_tags() {
  * @return void
  */
 function open_graph_tags() {
-	include SCP_PATH . 'views/frontend/meta-data/meta-tags/open-graph.php';
+	include CCD_PATH . 'views/frontend/meta-data/meta-tags/open-graph.php';
 }
 
 /**
@@ -633,7 +633,7 @@ function open_graph_tags() {
  * @return void
  */
 function twitter_tags() {
-	include SCP_PATH . 'views/frontend/meta-data/meta-tags/twitter.php';
+	include CCD_PATH . 'views/frontend/meta-data/meta-tags/twitter.php';
 }
 
 /**
@@ -643,7 +643,7 @@ function twitter_tags() {
  * @return void
  */
 function dublin_tags() {
-	include SCP_PATH . 'views/frontend/meta-data/meta-tags/dublin.php';
+	include CCD_PATH . 'views/frontend/meta-data/meta-tags/dublin.php';
 }
 
 /**
@@ -653,7 +653,7 @@ function dublin_tags() {
  * @return void
  */
 function article_data() {
-	include SCP_PATH . 'views/frontend/meta-data/structured-data/article.php';
+	include CCD_PATH . 'views/frontend/meta-data/structured-data/article.php';
 }
 
 /**
@@ -663,7 +663,7 @@ function article_data() {
  * @return void
  */
 function news_article_data() {
-	include SCP_PATH . 'views/frontend/meta-data/structured-data/news-article.php';
+	include CCD_PATH . 'views/frontend/meta-data/structured-data/news-article.php';
 }
 
 /**
@@ -673,5 +673,5 @@ function news_article_data() {
  * @return void
  */
 function blog_post_data() {
-	include SCP_PATH . 'views/frontend/meta-data/structured-data/blog-post.php';
+	include CCD_PATH . 'views/frontend/meta-data/structured-data/blog-post.php';
 }

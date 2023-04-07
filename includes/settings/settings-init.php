@@ -2,17 +2,17 @@
 /**
  * Initiate settings sections and fields
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Settings;
+namespace CCDzine\Settings;
 
 use
-SiteCore\Classes\Admin    as Backend_Class,
-SiteCore\Classes\Settings as Settings_Class;
+CCDzine\Classes\Admin    as Backend_Class,
+CCDzine\Classes\Settings as Settings_Class;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

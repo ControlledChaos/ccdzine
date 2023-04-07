@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace CCDzine\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,9 +31,9 @@ class Sample_ACF_Suboptions extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Sample ACF Options Subpage', 'sitecore' ),
-			'menu_title'  => __( 'ACF Options', 'sitecore' ),
-			'description' => __( 'Demonstration of adding an ACF options subpage.', 'sitecore' )
+			'page_title'  => __( 'Sample ACF Options Subpage', 'ccdzine' ),
+			'menu_title'  => __( 'ACF Options', 'ccdzine' ),
+			'description' => __( 'Demonstration of adding an ACF options subpage.', 'ccdzine' )
 		];
 
 		$options = [
@@ -64,6 +64,6 @@ class Sample_ACF_Suboptions extends Add_Page {
 	 * @return void
 	 */
 	public function acf_field_groups() {
-		include_once SCP_PATH . '/includes/fields/acf-sample-suboptions.php';
+		include_once CCD_PATH . '/includes/fields/acf-sample-suboptions.php';
 	}
 }

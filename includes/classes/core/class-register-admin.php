@@ -2,15 +2,15 @@
 /**
  * Register admin pages post type
  *
- * @package    Site_Core
+ * @package    CCDzine
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace CCDzine\Classes\Core;
 
-use SiteCore\Classes\Admin as Backend_Class;
+use CCDzine\Classes\Admin as Backend_Class;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,8 +29,8 @@ class Register_Admin extends Register_Type {
 	public function __construct() {
 
 		$labels = [
-			'singular'    => __( 'admin page', 'sitecore' ),
-			'plural'      => __( 'admin pages', 'sitecore' ),
+			'singular'    => __( 'admin page', 'ccdzine' ),
+			'plural'      => __( 'admin pages', 'ccdzine' ),
 			'description' => '',
 			'menu_icon'   => 'dashicons-clipboard'
 		];
@@ -142,7 +142,7 @@ class Register_Admin extends Register_Type {
 		$type_obj  = get_post_type_object( $post_type );
 
 		// New post type labels.
-		$type_obj->labels->all_items = __( 'Admin Pages', 'sitecore' );
+		$type_obj->labels->all_items = __( 'Admin Pages', 'ccdzine' );
 	}
 
 	/**
@@ -262,7 +262,7 @@ class Register_Admin extends Register_Type {
 					if ( ! is_array( $get_tabs ) ) {
 						printf(
 							'<h2>%s</h2>',
-							__( 'No content available.', 'sitecore' )
+							__( 'No content available.', 'ccdzine' )
 						);
 						return;
 					}
@@ -356,7 +356,7 @@ class Register_Admin extends Register_Type {
 	 * @return void
 	 */
 	public function admin_enqueue_scripts() {
-		return apply_filters( 'scp_admin_pages_enqueue_scripts', null );
+		return apply_filters( 'ccd_admin_pages_enqueue_scripts', null );
 	}
 
 	/**
